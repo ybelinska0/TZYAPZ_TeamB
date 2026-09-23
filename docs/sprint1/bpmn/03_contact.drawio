@@ -1,0 +1,278 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="03_contact" name="03_contact">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root><mxCell id="0" /><mxCell id="1" parent="0" />
+        <mxCell id="P_buyer" value="Покупець" style="swimlane;html=1;horizontal=0;startSize=32;fontStyle=1;fontSize=12;swimlaneFillColor=none;fillColor=none;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1620" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="P_shop" value="ШопЛайн" style="swimlane;html=1;horizontal=0;startSize=32;fontStyle=1;fontSize=12;swimlaneFillColor=none;fillColor=none;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="1620" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="Lane_site" value="Сайт (система)" style="swimlane;html=1;horizontal=0;startSize=28;fontSize=11;swimlaneFillColor=none;fillColor=none;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="440" width="1588" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Lane_mgr" value="Менеджер магазину" style="swimlane;html=1;horizontal=0;startSize=28;fontSize=11;swimlaneFillColor=none;fillColor=none;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="620" width="1588" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="Lane_adm" value="Адміністратор" style="swimlane;html=1;horizontal=0;startSize=28;fontSize=11;swimlaneFillColor=none;fillColor=none;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="960" width="1588" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="do_msg" value="Звернення" style="shape=note;whiteSpace=wrap;html=1;size=12;verticalAlign=bottom;align=center;fontSize=10;labelPosition=center;verticalLabelPosition=bottom;" vertex="1" parent="1">
+          <mxGeometry x="292" y="70" width="36" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ds_reg" value="Реєстр звернень" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;whiteSpace=wrap;html=1;fontSize=10;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="420" y="500" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ta1" value="Контактна форма приймає вкладення лише з розширенням .txt" style="shape=partialRectangle;whiteSpace=wrap;html=1;top=0;right=0;bottom=0;left=1;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="800" y="60" width="260" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="Виникло питання чи проблема" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=ellipsePerimeter;outline=standard;symbol=general;" vertex="1" parent="1">
+          <mxGeometry x="180" y="182" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" value="Надіслати звернення через контактну форму" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="260" y="160" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_auto" value="Отримано автовідповідь" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=ellipsePerimeter;outline=catching;symbol=message;" vertex="1" parent="1">
+          <mxGeometry x="415" y="182" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ans" value="Отримано відповідь на звернення" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=ellipsePerimeter;outline=catching;symbol=message;" vertex="1" parent="1">
+          <mxGeometry x="500" y="182" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="gw_ok" value="Питання вирішено?" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=rhombusPerimeter;background=gateway;outline=none;symbol=exclusiveGw;" vertex="1" parent="1">
+          <mxGeometry x="600" y="175" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="end1" value="Відповідь отримано" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=ellipsePerimeter;outline=end;symbol=general;" vertex="1" parent="1">
+          <mxGeometry x="700" y="182" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="t_clar" value="Надіслати уточнення" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="660" y="265" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="Отримано звернення" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=ellipsePerimeter;outline=standard;symbol=message;" vertex="1" parent="1">
+          <mxGeometry x="180" y="512" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="t_reg" value="Зареєструвати звернення і надіслати автовідповідь" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="260" y="490" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t_send" value="Надіслати відповідь у кабінет і на email" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="490" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t_class" value="Класифікувати звернення за темою" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="410" y="740" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gw_type" value="Тип звернення?" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=rhombusPerimeter;background=gateway;outline=none;symbol=exclusiveGw;" vertex="1" parent="1">
+          <mxGeometry x="560" y="755" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t_prep" value="Уточнювати деталі й готувати відповідь" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="650" y="740" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t_prep_mk" value="&#8635;" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="693" y="798" width="24" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="be_tim" value="Минуло 24 години без реакції" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=ellipsePerimeter;outline=boundNonint;symbol=timer;" vertex="1" parent="1">
+          <mxGeometry x="692" y="802" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="t_remind" value="Надіслати нагадування виконавцю" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="790" y="850" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gw_join" value="" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=rhombusPerimeter;background=gateway;outline=none;symbol=exclusiveGw;" vertex="1" parent="1">
+          <mxGeometry x="950" y="755" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gw_wait" value="" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=rhombusPerimeter;background=gateway;outline=catching;symbol=multiple;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="755" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_clar" value="Отримано уточнення від покупця" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=ellipsePerimeter;outline=catching;symbol=message;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="672" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_3d" value="Минуло 3 дні без уточнень" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=ellipsePerimeter;outline=catching;symbol=timer;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="862" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="t_close" value="Закрити звернення" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="840" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="end2" value="Звернення закрито" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;outlineConnect=0;perimeter=ellipsePerimeter;outline=end;symbol=general;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="862" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="t_tech" value="Уточнювати деталі й готувати технічну відповідь" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1010" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t_tech_mk" value="&#8635;" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="693" y="1068" width="24" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s1" target="t1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t1" target="ic_auto">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ic_auto" target="ic_ans">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ic_ans" target="gw_ok">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f5" value="так" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_ok" target="end1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f6" value="ні" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_ok" target="t_clar">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="625" y="305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_clar" target="ic_ans">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="518" y="305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s2" target="t_reg">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_reg" target="t_class">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="315" y="655" />
+              <mxPoint x="460" y="655" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_class" target="gw_type">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g4" value="замовлення / товар / інше" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_type" target="t_prep">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g5" value="технічна проблема" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_type" target="t_tech">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="585" y="1050" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_prep" target="gw_join">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_tech" target="gw_join">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="930" y="1050" />
+              <mxPoint x="930" y="780" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="be_tim" target="t_remind">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="710" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_remind" target="gw_join">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="975" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_join" target="t_send">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1155" y="780" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_send" target="gw_wait">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1275" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_wait" target="ic_clar">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1275" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_wait" target="ic_3d">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1275" y="880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ic_clar" target="t_prep">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1348" y="640" />
+              <mxPoint x="705" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ic_3d" target="t_close">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_close" target="end2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mf1" value="Звернення" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;dashPattern=8 6;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t1" target="s2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="410" />
+              <mxPoint x="198" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mf2" value="Автовідповідь" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;dashPattern=8 6;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_reg" target="ic_auto">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="420" />
+              <mxPoint x="433" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mf3" value="Відповідь" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;dashPattern=8 6;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_send" target="ic_ans">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1155" y="398" />
+              <mxPoint x="518" y="398" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mf4" value="Уточнення" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;dashPattern=8 6;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeWidth=1.2;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_clar" target="ic_clar">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1348" y="305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;dashPattern=1 3;endArrow=none;" edge="1" parent="1" source="t1" target="do_msg">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;dashPattern=1 3;endArrow=none;" edge="1" parent="1" source="t_reg" target="ds_reg">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;dashPattern=1 3;endArrow=none;" edge="1" parent="1" source="t1" target="ta1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

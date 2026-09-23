@@ -1,0 +1,287 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="02_return" id="02return">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root><mxCell id="0"/><mxCell id="1" parent="0"/>
+<mxCell id="p1" value="Пул: Покупець" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eef4fb;strokeColor=#9fc1e6;verticalAlign=top;align=left;spacingLeft=12;spacingTop=8;fontSize=14;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+  <mxGeometry x="0" y="40" width="3010" height="474" as="geometry"/>
+</mxCell>
+<mxCell id="x1" value="Доріжка: Покупець" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#3d3c37;" vertex="1" parent="1">
+  <mxGeometry x="12" y="96" width="230" height="22" as="geometry"/>
+</mxCell>
+<mxCell id="p2" value="Пул: ШопЛайн" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eef8f2;strokeColor=#9fd6b3;verticalAlign=top;align=left;spacingLeft=12;spacingTop=8;fontSize=14;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+  <mxGeometry x="0" y="574" width="3010" height="1082" as="geometry"/>
+</mxCell>
+<mxCell id="x2" value="Доріжка: Менеджер магазину" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#3d3c37;" vertex="1" parent="1">
+  <mxGeometry x="12" y="630" width="230" height="22" as="geometry"/>
+</mxCell>
+<mxCell id="x3" style="endArrow=none;html=1;dashed=1;strokeColor=#9fd6b3;strokeWidth=1;" edge="1" parent="1">
+  <mxGeometry relative="1" as="geometry"><mxPoint x="0" y="920" as="sourcePoint"/><mxPoint x="3010" y="920" as="targetPoint"/></mxGeometry>
+</mxCell>
+<mxCell id="x4" value="Доріжка: Склад" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#3d3c37;" vertex="1" parent="1">
+  <mxGeometry x="12" y="934" width="230" height="22" as="geometry"/>
+</mxCell>
+<mxCell id="x5" style="endArrow=none;html=1;dashed=1;strokeColor=#9fd6b3;strokeWidth=1;" edge="1" parent="1">
+  <mxGeometry relative="1" as="geometry"><mxPoint x="0" y="1352" as="sourcePoint"/><mxPoint x="3010" y="1352" as="targetPoint"/></mxGeometry>
+</mxCell>
+<mxCell id="x6" value="Доріжка: Бухгалтерія" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#3d3c37;" vertex="1" parent="1">
+  <mxGeometry x="12" y="1366" width="230" height="22" as="geometry"/>
+</mxCell>
+<mxCell id="s1" value="Виникла потреба повернути товар" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#4a7a4a;strokeWidth=2;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="317" y="270" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="t_fill" value="Вказати номер замовлення і причину" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="520" y="263" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="do_req" value="Заявка на повернення" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fbf7ec;strokeColor=#b9a463;strokeWidth=1.5;size=12;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="550" y="400" width="130" height="52" as="geometry"/>
+</mxCell>
+<mxCell id="t_submit" value="Подати заявку на повернення ✉→" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="790" y="263" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="gw_ev1" value="Рішення менеджера? (E)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fdf3e0;strokeColor=#cf9a3a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="1065" y="253" width="180" height="90" as="geometry"/>
+</mxCell>
+<mxCell id="ic_appr" value="✉ Отримано погодження" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#4a7a4a;strokeWidth=2;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="1397" y="142" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="ic_appr_r" value="" style="ellipse;html=1;perimeter=ellipsePerimeter;fillColor=none;strokeColor=#4a7a4a;strokeWidth=2;" vertex="1" parent="1">
+  <mxGeometry x="1402" y="147" width="46" height="46" as="geometry"/>
+</mxCell>
+<mxCell id="ic_ref" value="✉ Отримано відмову" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#4a7a4a;strokeWidth=2;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="1397" y="270" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="ic_ref_r" value="" style="ellipse;html=1;perimeter=ellipsePerimeter;fillColor=none;strokeColor=#4a7a4a;strokeWidth=2;" vertex="1" parent="1">
+  <mxGeometry x="1402" y="275" width="46" height="46" as="geometry"/>
+</mxCell>
+<mxCell id="end_ref" value="Відмовлено" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#fbeaea;strokeColor=#a13a3a;strokeWidth=4;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="1667" y="270" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="t_ship" value="Надіслати товар на склад ✉→" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="1600" y="135" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="do_ttn" value="Поштова накладна" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fbf7ec;strokeColor=#b9a463;strokeWidth=1.5;size=12;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="1630" y="400" width="130" height="52" as="geometry"/>
+</mxCell>
+<mxCell id="gw_ev2" value="Результат перевірки? (E)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fdf3e0;strokeColor=#cf9a3a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="1875" y="253" width="180" height="90" as="geometry"/>
+</mxCell>
+<mxCell id="ic_full" value="✉ Повідомлення про повне повернення" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#4a7a4a;strokeWidth=2;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="2207" y="142" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="ic_full_r" value="" style="ellipse;html=1;perimeter=ellipsePerimeter;fillColor=none;strokeColor=#4a7a4a;strokeWidth=2;" vertex="1" parent="1">
+  <mxGeometry x="2212" y="147" width="46" height="46" as="geometry"/>
+</mxCell>
+<mxCell id="ic_part" value="✉ Повідомлення про часткове повернення" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#4a7a4a;strokeWidth=2;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="2207" y="270" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="ic_part_r" value="" style="ellipse;html=1;perimeter=ellipsePerimeter;fillColor=none;strokeColor=#4a7a4a;strokeWidth=2;" vertex="1" parent="1">
+  <mxGeometry x="2212" y="275" width="46" height="46" as="geometry"/>
+</mxCell>
+<mxCell id="ic_dmg" value="✉ Відмова після перевірки" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#4a7a4a;strokeWidth=2;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="2207" y="398" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="ic_dmg_r" value="" style="ellipse;html=1;perimeter=ellipsePerimeter;fillColor=none;strokeColor=#4a7a4a;strokeWidth=2;" vertex="1" parent="1">
+  <mxGeometry x="2212" y="403" width="46" height="46" as="geometry"/>
+</mxCell>
+<mxCell id="end_full" value="Кошти повернуто" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#fbeaea;strokeColor=#a13a3a;strokeWidth=4;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="2477" y="142" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="end_part" value="Часткове повернення" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#fbeaea;strokeColor=#a13a3a;strokeWidth=4;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="2477" y="270" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="end_dmg" value="Відмовлено після перевірки" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#fbeaea;strokeColor=#a13a3a;strokeWidth=4;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="2477" y="398" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="ta1" value="Строк повернення — 14 днів від дати отримання замовлення" style="shape=partialRectangle;whiteSpace=wrap;html=1;top=0;right=0;bottom=0;left=1;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;fillColor=none;strokeColor=#888888;" vertex="1" parent="1">
+  <mxGeometry x="235" y="676" width="220" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="s_mgr" value="✉ Отримано заявку на повернення" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#4a7a4a;strokeWidth=2;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="317" y="804" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="gw_term" value="Строк 14 днів дотримано і підстава прийнятна? (X)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fdf3e0;strokeColor=#cf9a3a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="525" y="787" width="180" height="90" as="geometry"/>
+</mxCell>
+<mxCell id="t_deny" value="Відмовити у поверненні ✉→" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="790" y="669" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="end_denied" value="Заявку відхилено" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#fbeaea;strokeColor=#a13a3a;strokeWidth=4;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="1127" y="676" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="t_appr" value="Погодити повернення ✉→" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="790" y="797" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="ic_goods" value="✉ Товар надійшов від покупця" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#4a7a4a;strokeWidth=2;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="1127" y="980" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="ic_goods_r" value="" style="ellipse;html=1;perimeter=ellipsePerimeter;fillColor=none;strokeColor=#4a7a4a;strokeWidth=2;" vertex="1" parent="1">
+  <mxGeometry x="1132" y="985" width="46" height="46" as="geometry"/>
+</mxCell>
+<mxCell id="t_inspect" value="Перевірити комплектність і стан товару" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="1330" y="973" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="do_act" value="Акт перевірки" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fbf7ec;strokeColor=#b9a463;strokeWidth=1.5;size=12;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="1360" y="1110" width="130" height="52" as="geometry"/>
+</mxCell>
+<mxCell id="gw_state" value="Стан товару? (X)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fdf3e0;strokeColor=#cf9a3a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="1605" y="963" width="180" height="90" as="geometry"/>
+</mxCell>
+<mxCell id="t_stock" value="Повернути одиницю на залишок" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="1870" y="973" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="t_partial" value="Оформити часткове повернення" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="1870" y="1101" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="t_dmg" value="Повідомити про непридатність товару ✉→" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="1870" y="1229" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="end_dmg_shop" value="У поверненні відмовлено" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#fbeaea;strokeColor=#a13a3a;strokeWidth=4;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="2207" y="1236" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="t_ref_full" value="Повернути повну суму" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="2140" y="1405" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="t_not_full" value="Повідомити про повне повернення ✉→" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="2410" y="1405" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="end_full_shop" value="Кошти повернуто" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#fbeaea;strokeColor=#a13a3a;strokeWidth=4;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="2747" y="1412" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="t_ref_part" value="Повернути частину суми" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="2140" y="1533" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="t_not_part" value="Повідомити про часткове повернення ✉→" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#ffffff;strokeColor=#7f9cc7;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
+  <mxGeometry x="2410" y="1533" width="190" height="70" as="geometry"/>
+</mxCell>
+<mxCell id="end_part_shop" value="Часткове повернення оформлено" style="ellipse;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fillColor=#fbeaea;strokeColor=#a13a3a;strokeWidth=4;fontSize=10;" vertex="1" parent="1">
+  <mxGeometry x="2747" y="1540" width="56" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="x7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s1" target="t_fill">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_fill" target="t_submit">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_submit" target="gw_ev1">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_ev1" target="ic_appr">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_ev1" target="ic_ref">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ic_ref" target="end_ref">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ic_appr" target="t_ship">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_ship" target="gw_ev2">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_ev2" target="ic_full">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_ev2" target="ic_part">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_ev2" target="ic_dmg">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ic_full" target="end_full">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ic_part" target="end_part">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ic_dmg" target="end_dmg">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x21" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;dashed=1;dashPattern=1 3;strokeColor=#888888;strokeWidth=1;" edge="1" parent="1" source="do_req" target="t_fill">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x22" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;dashed=1;dashPattern=1 3;strokeColor=#888888;strokeWidth=1;" edge="1" parent="1" source="do_ttn" target="t_ship">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_mgr" target="gw_term">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x24" value="ні" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_term" target="t_deny">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_deny" target="end_denied">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x26" value="так" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_term" target="t_appr">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x27" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;dashed=1;dashPattern=1 3;strokeColor=#888888;strokeWidth=1;" edge="1" parent="1" source="ta1" target="gw_term">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_appr" target="ic_goods">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ic_goods" target="t_inspect">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_inspect" target="gw_state">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x31" value="придатний" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_state" target="t_stock">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x32" value="неповний" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_state" target="t_partial">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x33" value="пошкоджений" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gw_state" target="t_dmg">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_dmg" target="end_dmg_shop">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x35" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;dashed=1;dashPattern=1 3;strokeColor=#888888;strokeWidth=1;" edge="1" parent="1" source="do_act" target="t_inspect">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_stock" target="t_ref_full">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_ref_full" target="t_not_full">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_not_full" target="end_full_shop">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_partial" target="t_ref_part">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_ref_part" target="t_not_part">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4b4a44;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_not_part" target="end_part_shop">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x42" value="Заявка на повернення" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeColor=#a13a3a;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_submit" target="s_mgr">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x43" value="Відмова" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeColor=#a13a3a;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_deny" target="ic_ref">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x44" value="Погодження" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeColor=#a13a3a;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_appr" target="ic_appr">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x45" value="Товар і накладна" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeColor=#a13a3a;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_ship" target="ic_goods">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x46" value="Повне повернення" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeColor=#a13a3a;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_not_full" target="ic_full">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x47" value="Часткове повернення" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeColor=#a13a3a;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_not_part" target="ic_part">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="x48" value="Відмова після перевірки" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;startArrow=oval;startFill=0;startSize=8;endArrow=open;endFill=0;endSize=10;strokeColor=#a13a3a;strokeWidth=1.6;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t_dmg" target="ic_dmg">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
