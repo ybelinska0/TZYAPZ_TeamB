@@ -8,13 +8,13 @@ labels: ["status:new", "sprint:3"]
 <!--
 Перед надсиланням:
 1. Замініть NNN у заголовку наступним вільним номером Bug ID.
-2. Додайте мітки severity:* і priority:* (status:new і sprint:3 вже стоять).
+2. Додайте мітки severity:* і priority:* (status:new і sprint:3 вже стоять); Status у заголовку звіту — New (далі за життєвим циклом 4.14).
 3. Один дефект — один звіт; суміжні дефекти — окремі звіти з посиланням одне на одне.
 4. Кожен крок — одна дія з конкретними даними; кроки починаються з відкриття сторінки в новій сесії.
 5. Після публікації закріпіть скріншоти як docs/sprint3/attachments/BUG-NNN-N.png.
 -->
 
-**Severity:** Blocker | Critical | Major | Normal | Minor | Trivial   **Priority:** P1 | P2 | P3
+**Severity:** Blocker | Critical | Major | Normal | Minor | Trivial   **Priority:** P1 | P2 | P3   **Status:** New
 **Linked:** test case TC-___; requirement ___
 
 ### Description
