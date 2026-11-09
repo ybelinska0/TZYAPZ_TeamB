@@ -63,3 +63,4 @@ class PromoCodeValidatorTest {
         assertNotNull(ex.getMessage());
     }
 }
+
