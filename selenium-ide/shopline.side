@@ -1,0 +1,765 @@
+{
+  "id": "3c390c6d-a6d9-4d4e-a6b6-7b5090bf2cc9",
+  "version": "3.0",
+  "name": "shopline",
+  "url": "https://www.saucedemo.com",
+  "urls": [
+    "http://www.google.com"
+  ],
+  "plugins": [],
+  "suites": [
+    {
+      "id": "74ae1efa-1386-43e8-97d5-85736faf85ae",
+      "name": "Smoke",
+      "parallel": false,
+      "persistSession": false,
+      "tests": [
+        "93dbd0da-9b9e-410a-8d22-1785a1090062",
+        "242766a2-a107-407f-a2ed-a7c9637e8ba2"
+      ],
+      "timeout": 30000
+    }
+  ],
+  "tests": [
+    {
+      "id": "93dbd0da-9b9e-410a-8d22-1785a1090062",
+      "name": "TC-004 login",
+      "commands": [
+        {
+          "id": "0af90b15-aede-4cd4-9c1e-feb23a10c951",
+          "command": "open",
+          "target": "https://www.saucedemo.com",
+          "value": ""
+        },
+        {
+          "command": "click",
+          "target": "css=[data-test=\"username\"]",
+          "value": "",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "7b5926f6-d13b-40a2-9c31-40f901228845",
+          "targets": [
+            [
+              "css=[data-test=\"username\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=user-name",
+              "id"
+            ],
+            [
+              "name=user-name",
+              "name"
+            ],
+            [
+              "css=[data-test=\"username\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#user-name",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='user-name'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='login_button_container']/div/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "css=[data-test=\"username\"]",
+          "value": "standard_user",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "ee1d9c92-610e-43ce-ae6e-79d57761d55d",
+          "targets": [
+            [
+              "css=[data-test=\"username\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=user-name",
+              "id"
+            ],
+            [
+              "name=user-name",
+              "name"
+            ],
+            [
+              "css=[data-test=\"username\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#user-name",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='user-name'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='login_button_container']/div/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=[data-test=\"password\"]",
+          "value": "",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "6f617475-f21f-466e-bdc4-9b463977dcef",
+          "targets": [
+            [
+              "css=[data-test=\"password\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=password",
+              "id"
+            ],
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=[data-test=\"password\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='login_button_container']/div/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "css=[data-test=\"password\"]",
+          "value": "secret_sauce",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "7a99306c-8f6e-46c3-925f-aef45b2ca363",
+          "targets": [
+            [
+              "css=[data-test=\"password\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=password",
+              "id"
+            ],
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=[data-test=\"password\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='login_button_container']/div/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=[data-test=\"login-button\"]",
+          "value": "",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "dcaf2ea0-2157-49c2-a44d-de1f452e140e",
+          "targets": [
+            [
+              "css=[data-test=\"login-button\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=login-button",
+              "id"
+            ],
+            [
+              "name=login-button",
+              "name"
+            ],
+            [
+              "css=[data-test=\"login-button\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#login-button",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-button'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='login_button_container']/div/form/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "waitForElementVisible",
+          "target": "css=[data-test='title']",
+          "value": "10000",
+          "id": "e5d6420b-3a4e-4bd3-bbd9-cfce280ebb40",
+          "comment": "дочекатися каталогу (до 10 с)"
+        },
+        {
+          "command": "assertText",
+          "target": "css=[data-test='title']",
+          "value": "Products",
+          "id": "6d0a136f-b13a-4606-b094-7d8fee2c1d78",
+          "comment": "жорстка перевірка: без неї далі нема сенсу"
+        },
+        {
+          "command": "verifyElementPresent",
+          "target": "css=.shopping_cart_link",
+          "value": "",
+          "id": "fd82a7d6-4980-4433-aebd-983d55e27ae2",
+          "comment": "м'яка: у шапці з'явився кошик"
+        },
+        {
+          "command": "verifyElementPresent",
+          "target": "id=react-burger-menu-btn",
+          "value": "",
+          "id": "008320cb-465a-42ba-a4ef-96bcb3c24299",
+          "comment": "м'яка: з'явилося меню"
+        },
+        {
+          "command": "assertTitle",
+          "target": "Swag Labs",
+          "value": "",
+          "id": "760f34c8-b3a5-48f6-be3b-c1452e541f19",
+          "comment": "заголовок вкладки"
+        }
+      ]
+    },
+    {
+      "id": "242766a2-a107-407f-a2ed-a7c9637e8ba2",
+      "name": "TC-019 Оформлення замовлення",
+      "commands": [
+        {
+          "id": "011a3f97-b736-4966-b8f7-81387cafb213",
+          "command": "open",
+          "target": "https://www.saucedemo.com",
+          "value": ""
+        },
+        {
+          "command": "type",
+          "target": "css=[data-test=\"username\"]",
+          "value": "standard_user",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "832d896e-ba68-48df-ac27-c525704f67ca",
+          "targets": [
+            [
+              "css=[data-test=\"username\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=user-name",
+              "id"
+            ],
+            [
+              "name=user-name",
+              "name"
+            ],
+            [
+              "css=[data-test=\"username\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#user-name",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='user-name'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='login_button_container']/div/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "css=[data-test=\"password\"]",
+          "value": "secret_sauce",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "14d08ff6-998a-4b7a-8f46-466af3312641",
+          "targets": [
+            [
+              "css=[data-test=\"password\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=password",
+              "id"
+            ],
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=[data-test=\"password\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='login_button_container']/div/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=[data-test=\"login-button\"]",
+          "value": "",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "b03c1511-1ecc-4fe2-90fb-bd2664b704d0",
+          "targets": [
+            [
+              "css=[data-test=\"login-button\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=login-button",
+              "id"
+            ],
+            [
+              "name=login-button",
+              "name"
+            ],
+            [
+              "css=[data-test=\"login-button\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#login-button",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-button'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='login_button_container']/div/form/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "waitForElementVisible",
+          "target": "css=[data-test='add-to-cart-sauce-labs-backpack']",
+          "value": "10000",
+          "id": "9692a374-a97b-461b-a8d8-f44c8c88ed16"
+        },
+        {
+          "command": "click",
+          "target": "css=[data-test=\"add-to-cart-sauce-labs-backpack\"]",
+          "value": "",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "e325dec1-f635-4cf4-a8e9-1be9ca64453e",
+          "targets": [
+            [
+              "css=[data-test=\"add-to-cart-sauce-labs-backpack\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=add-to-cart-sauce-labs-backpack",
+              "id"
+            ],
+            [
+              "name=add-to-cart-sauce-labs-backpack",
+              "name"
+            ],
+            [
+              "css=[data-test=\"add-to-cart-sauce-labs-backpack\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=div:nth-of-type(1) > [data-test=\"inventory-item-description\"] .btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@id='add-to-cart-sauce-labs-backpack'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='inventory_container']/div/div/div[2]/div[2]/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Add to cart')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "verifyText",
+          "target": "css=.shopping_cart_badge",
+          "value": "1",
+          "id": "0605b1b8-59a6-48ee-ab39-1a50e5281c0d"
+        },
+        {
+          "command": "click",
+          "target": "css=[data-test=\"shopping-cart-link\"]",
+          "value": "",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "43aabad4-f57e-4c08-808a-7c4b913773af",
+          "targets": [
+            [
+              "css=[data-test=\"shopping-cart-link\"]",
+              "css:data-test-id"
+            ],
+            [
+              "linkText=1",
+              "linkText"
+            ],
+            [
+              "css=[data-test=\"shopping-cart-link\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=[data-test=\"shopping-cart-link\"]",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='shopping_cart_container']/a)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//a[contains(.,'1')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "waitForElementVisible",
+          "target": "id=checkout",
+          "value": "10000",
+          "id": "c54867a2-57b6-4f99-afb6-597c579277ca"
+        },
+        {
+          "command": "click",
+          "target": "css=[data-test=\"checkout\"]",
+          "value": "",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "4e81d67e-3326-4f85-a921-1df3a9dd07b8",
+          "targets": [
+            [
+              "css=[data-test=\"checkout\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=checkout",
+              "id"
+            ],
+            [
+              "name=checkout",
+              "name"
+            ],
+            [
+              "css=[data-test=\"checkout\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#checkout",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@id='checkout'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='cart_contents_container']/div/div[2]/button[2])[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Checkout')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "waitForElementVisible",
+          "target": "id=first-name",
+          "value": "10000",
+          "id": "7131e675-6f99-4794-91f2-ecef5402e745"
+        },
+        {
+          "command": "type",
+          "target": "css=[data-test=\"firstName\"]",
+          "value": "test",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "ece97ca8-7df5-4e6b-bc8b-c6e6021668ea",
+          "targets": [
+            [
+              "css=[data-test=\"firstName\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=first-name",
+              "id"
+            ],
+            [
+              "name=firstName",
+              "name"
+            ],
+            [
+              "css=[data-test=\"firstName\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#first-name",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='first-name'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='checkout_info_container']/div/form/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "css=[data-test=\"lastName\"]",
+          "value": "user",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "f7bed71b-d47f-4a9a-89ac-32fde86e7589",
+          "targets": [
+            [
+              "css=[data-test=\"lastName\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=last-name",
+              "id"
+            ],
+            [
+              "name=lastName",
+              "name"
+            ],
+            [
+              "css=[data-test=\"lastName\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#last-name",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='last-name'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='checkout_info_container']/div/form/div/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "css=[data-test=\"postalCode\"]",
+          "value": "00742",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "82339469-ffc8-4127-acc3-1240ca6d863d",
+          "targets": [
+            [
+              "css=[data-test=\"postalCode\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=postal-code",
+              "id"
+            ],
+            [
+              "name=postalCode",
+              "name"
+            ],
+            [
+              "css=[data-test=\"postalCode\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#postal-code",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='postal-code'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='checkout_info_container']/div/form/div/div[3]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=[data-test=\"continue\"]",
+          "value": "",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "e0673706-034b-4b3c-88a6-ee38530330f3",
+          "targets": [
+            [
+              "css=[data-test=\"continue\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=continue",
+              "id"
+            ],
+            [
+              "name=continue",
+              "name"
+            ],
+            [
+              "css=[data-test=\"continue\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#continue",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='continue'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='checkout_info_container']/div/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "waitForElementVisible",
+          "target": "id=finish",
+          "value": "10000",
+          "id": "09c0c340-8545-4af4-8759-f726a65694c4"
+        },
+        {
+          "command": "verifyText",
+          "target": "css=.summary_subtotal_label",
+          "value": "Item total: $29.99",
+          "id": "00e7c17a-e8eb-4a25-a1aa-92de70cb8047"
+        },
+        {
+          "command": "click",
+          "target": "css=[data-test=\"finish\"]",
+          "value": "",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "cf0915e4-be6d-4a85-8898-e557b3da4741",
+          "targets": [
+            [
+              "css=[data-test=\"finish\"]",
+              "css:data-test-id"
+            ],
+            [
+              "id=finish",
+              "id"
+            ],
+            [
+              "name=finish",
+              "name"
+            ],
+            [
+              "css=[data-test=\"finish\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=#finish",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@id='finish'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='checkout_summary_container']/div/div[2]/div[9]/button[2])[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Finish')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "assertText",
+          "target": "css=.complete-header",
+          "value": "Thank you for your order!",
+          "id": "9a869052-1180-413b-86f6-40f91e9d2d08"
+        }
+      ]
+    }
+  ],
+  "snapshot": {
+    "dependencies": {},
+    "tests": [],
+    "jest": {
+      "extraGlobals": []
+    }
+  }
+}
