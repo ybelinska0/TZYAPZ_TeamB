@@ -73,7 +73,7 @@ abstract class UiTestBase {
     }
 
     protected void openCart() {
-        driver.findElement(By.className("shopping_cart_link")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.className("shopping_cart_link"))).click();
         wait.until(ExpectedConditions.urlContains("/cart.html"));
     }
 

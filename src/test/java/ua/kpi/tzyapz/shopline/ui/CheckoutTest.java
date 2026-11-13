@@ -38,7 +38,8 @@ class CheckoutTest extends UiTestBase {
                         driver.findElement(By.className("inventory_item_price")).getText(), "ціна"),
                 () -> assertEquals("1", driver.findElement(By.className("shopping_cart_badge")).getText(), "лічильник"));
 
-        driver.findElement(By.cssSelector("[data-test='remove-" + BACKPACK + "']")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.cssSelector("[data-test='remove-" + BACKPACK + "']"))).click();
 
         wait.until(ExpectedConditions.numberOfElementsToBe(item, 0));
         assertTrue(driver.findElements(By.className("shopping_cart_badge")).isEmpty(),
@@ -52,7 +53,7 @@ class CheckoutTest extends UiTestBase {
         addToCart(BACKPACK);
         addToCart(BIKE_LIGHT);
         openCart();
-        driver.findElement(By.id("checkout")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("checkout"))).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("first-name"))).sendKeys("Pavlo");
         driver.findElement(By.id("last-name")).sendKeys("Bobrov");
@@ -60,6 +61,7 @@ class CheckoutTest extends UiTestBase {
         driver.findElement(By.id("continue")).click();
 
         wait.until(ExpectedConditions.urlContains("/checkout-step-two.html"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("summary_total_label")));
         BigDecimal itemTotal = money(driver.findElement(By.className("summary_subtotal_label")).getText());
         BigDecimal tax = money(driver.findElement(By.className("summary_tax_label")).getText());
         BigDecimal total = money(driver.findElement(By.className("summary_total_label")).getText());
@@ -68,7 +70,7 @@ class CheckoutTest extends UiTestBase {
                 () -> assertEquals(new BigDecimal("39.98"), itemTotal, "сума цін 29.99 + 9.99"),
                 () -> assertEquals(itemTotal.add(tax), total, "Total = Item total + Tax"));
 
-        driver.findElement(By.id("finish")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("finish"))).click();
 
         String header = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("complete-header")))
                 .getText();

@@ -50,7 +50,7 @@ class LoginTest extends UiTestBase {
                 "поле пароля має тип password");
         loginAsStandardUser();
 
-        driver.findElement(By.id("react-burger-menu-btn")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("react-burger-menu-btn"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("logout_sidebar_link"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-button")));
         driver.get(BASE_URL + "inventory.html");
