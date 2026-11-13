@@ -29,6 +29,7 @@ class DiscountCalculatorTest {
     // Правило: 0 % (< 2000), 5 % (від 2000 включно), 10 % (від 5000 включно),
     // 15 % (від 10000 включно). Застосовується лише найвищий досягнутий рівень.
 
+    // BUG-015: subtotal=5000.00 → volumeDiscountPercent повертає 5% замість очікуваних 10%
     @ParameterizedTest(name = "subtotal={0} → очікується {1}%")
     @DisplayName("BL-50: межі тарифів знижки (volumeDiscountPercent)")
     @CsvSource({
@@ -44,6 +45,7 @@ class DiscountCalculatorTest {
         assertEquals(expectedPercent, actual);
     }
 
+    // BUG-016: volumeDiscount округлює вниз (FLOOR) замість HALF_UP; 150.005 повертає 150.00 замість 150.01
     @Test
     @DisplayName("BL-50: сума знижки округлюється HALF_UP до копійок")
     void volumeDiscount_roundsHalfUp() {

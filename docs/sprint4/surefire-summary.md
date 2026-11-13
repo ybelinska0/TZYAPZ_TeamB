@@ -19,7 +19,7 @@
 | `DiscountCalculatorTest.volumeDiscount_roundsHalfUp` | 150.005: expected 150.01 (HALF_UP), was 150.00 | BUG-016 |
 | `CartTest.addItemWithQtyOutOfRangeIsRejected[4]` | qty=100 прийнято, очікувався виняток (межа 99) | BUG-017 |
 | `CartTest.changeQtyOutOfRangeIsRejected[3]` | qty=100 прийнято, очікувався виняток | BUG-017 |
-| `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | сумарна qty > 99 прийнята без винятку | BUG-017/018 |
+| `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | сумарна qty > 99 прийнята без винятку | BUG-017 |
 | `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine` | 2+3: expected qty 5, was 3 (рядок замінено) | BUG-018 |
 | `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted` | 2+97: expected qty 99, was 97 | BUG-018 |
 | `PromoCodeValidatorRulesTest.expiryDateIsInclusive[2]` | у день закінчення код відхилено (має бути придатний включно) | BUG-019 |
