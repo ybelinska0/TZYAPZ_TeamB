@@ -81,4 +81,24 @@ class DiscountCalculatorTest {
         assertThrows(IllegalArgumentException.class,
             () -> discounts.volumeDiscountPercent(negative));
     }
+
+    // BL-50: «для від'ємної суми метод кидає IllegalArgumentException» — це стосується й volumeDiscount.
+    @Test
+    @DisplayName("BL-50: від'ємна сума — volumeDiscount кидає IllegalArgumentException")
+    void negativeSubtotal_volumeDiscountThrowsException() {
+        BigDecimal negative = new BigDecimal("-0.01");
+
+        assertThrows(IllegalArgumentException.class,
+            () -> discounts.volumeDiscount(negative));
+    }
+
+    // BL-60: «для від'ємної суми метод кидає IllegalArgumentException» — shippingFee.
+    @Test
+    @DisplayName("BL-60: від'ємна сума після знижки — shippingFee кидає IllegalArgumentException")
+    void negativeSubtotalAfterDiscount_shippingFeeThrowsException() {
+        BigDecimal negative = new BigDecimal("-0.01");
+
+        assertThrows(IllegalArgumentException.class,
+            () -> discounts.shippingFee(negative));
+    }
 }
