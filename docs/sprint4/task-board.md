@@ -24,7 +24,7 @@
 | Юніт-тестів JUnit 5 | ≥ 20 | **38** (91 із параметризацією) |
 | UI-сценаріїв WebDriver | ≥ 8 | **8** (`LoginTest` 3, `CatalogTest` 3, `CheckoutTest` 2) |
 | Дефектів модуля (звіт + тест) | ≥ 5 | **6** (BUG-015…BUG-020, GitHub Issues #27–#30, #38, #50) |
-| Юніт-тестів на особу | ≥ 3 | Белінська 4, Кочаров 7, Бойко 10, Матвієнко 13, Бобров 4 |
+| Юніт-тестів на особу | ≥ 3 | Белінська 4, Кочаров 7, Бойко 10, Матвієнко 4, Бобров 13 |
 | Матриця покриття | є | `coverage-matrix.md` — 13 рядків BL-10…BL-80, PR #45 |
 | UI-сценарії (документ) | є | `ui-scenarios.md` — 8 сценаріїв TC-004…TC-024, PR #46 |
 | Протокол Surefire | є | `surefire-summary.md` — 2 запуски (91 юніт + 8 UI), PR #47 |
@@ -44,8 +44,8 @@
 | TTS-49 | Матриця покриття «BL-вимога → правило → тести» | ТА | Матвієнко В. | ✅ Done | `coverage-matrix.md`, PR #45 |
 | TTS-50 | `DiscountCalculatorTest` (BL-50, BL-60) | КТ | Белінська Є. | ✅ Done | PR #31 |
 | TTS-51 | `PromoCodeValidatorTest` — валідація формату (BL-70) | ТА | Матвієнко В. | ✅ Done | PR #36 |
-| TTS-52 | `PromoCodeValidatorRulesTest` + `CartNormalCasesTest` | ІТ | Бобров П. | ✅ Done | PR #37 |
-| TTS-53 | `PromoCodeValidatorReasonsTest` (BL-70, BL-80) | СМ | Бойко Є. | ✅ Done | PR #35 |
+| TTS-52 | `PromoCodeValidatorReasonsTest` + `CartNormalCasesTest` | ІТ | Бобров П. | ✅ Done | PR #37 |
+| TTS-53 | `PromoCodeValidatorRulesTest` (BL-70, BL-80) | СМ | Бойко Є. | ✅ Done | PR #35 |
 | TTS-54 | `CartTest` — заборонені входи і винятки (BL-10, BL-20, BL-40) | АО | Кочаров Д. | ✅ Done | PR #32 |
 | TTS-55 | Контроль нормативу юніт-тестів (≥3 на особу, ≥20 разом) | КТ | Белінська Є. | ✅ Done | 38 методів, 91 з параметризацією |
 | **3** | **Дефекти модуля** | | | | |
@@ -53,10 +53,10 @@
 | TTS-57 | Перевірка звітів за правилами спринта 3 | СМ | Бойко Є. | ✅ Done | `code-review.md` §«Зауваження» |
 | **4** | **Selenium і UI-тести** | | | | |
 | TTS-58 | 1–2 сценарії в Selenium IDE | ІТ | Бобров П. | ✅ Done | `selenium-ide/` |
-| TTS-59 | Експорт сценаріїв Selenium IDE у Java JUnit (чернетка) | ІТ | Бобров П. | ✅ Done | `src/test/java/.../ui/` |
+| TTS-59 | Експорт сценаріїв Selenium IDE у Java JUnit (чернетка) | ІТ | Бобров П. | ✅ Done | `selenium-ide/export/` |
 | TTS-60 | Відбір UI-сценаріїв зі спринта 3, опис кроків/локаторів/очікувань | ТА | Матвієнко В. | ✅ Done | `ui-scenarios.md`, PR #46 |
 | TTS-61 | WebDriver-тести: вхід покупця + головна операція | ІТ | Бобров П. | ✅ Done | PR #37 |
-| TTS-62 | WebDriver-тести: ≥8 сценаріїв разом | ТА | Матвієнко В. | ✅ Done | 8 тестів у `main` |
+| TTS-62 | WebDriver-тести: ≥8 сценаріїв разом | ІТ | Бобров П. | ✅ Done | 8 UI-тестів у PR #37 |
 | TTS-63 | Стабілізація UI-набору (TC-019, `WebDriverWait`) | ІТ | Бобров П. | ✅ Done | PR #48 |
 | **5** | **Code review** | | | | |
 | TTS-64 | Code review кожного тест-класу за чек-листом 5.3 | СМ | Бойко Є. | ✅ Done | `code-review.md`, PR #49 |

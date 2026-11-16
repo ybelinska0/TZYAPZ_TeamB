@@ -14,7 +14,7 @@
 | Показник | Норматив (5 осіб) | Факт |
 |---|---|---|
 | Юніт-тестів JUnit 5 (методів) | ≥ 20 | **38** (91 із параметризацією) |
-| Юніт-тестів на особу | ≥ 3 | Белінська 4, Кочаров 7, Бойко 10, Матвієнко 13, Бобров 4 |
+| Юніт-тестів на особу | ≥ 3 | Белінська 4, Кочаров 7, Бойко 10, Матвієнко 4, Бобров 13 |
 | UI-сценаріїв WebDriver | ≥ 8 | **8** (LoginTest 3, CatalogTest 3, CheckoutTest 2) |
 | Дефектів модуля (звіт + тест) | ≥ 5 | **6** (BUG-015…BUG-020) |
 | Матриця покриття | є | `coverage-matrix.md` — 13 рядків BL-10…BL-80 |
@@ -121,11 +121,11 @@ qa-shopline/
 
 | Учасник | Роль | Тест-класи / артефакти |
 |---|---|---|
-| Белінська Єлизавета | КТ | `DiscountCalculatorTest.java`, `PromoCodeValidatorRulesTest.java` (частково), координація, `surefire-summary.md`, `task-board.md` |
-| Матвієнко Владислав | ТА | `PromoCodeValidatorTest.java`, `CatalogTest.java`, `LoginTest.java`, `ui-scenarios.md`, `coverage-matrix.md` |
-| Бобров Павло | ІТ | `CartNormalCasesTest.java`, `CheckoutTest.java`, `PromoCodeValidatorReasonsTest.java` (частково), `pom.xml`, інфраструктура |
-| Бойко Євгеній | СМ | `CartTest.java`, `CartNormalCasesTest.java`, `PromoCodeValidatorReasonsTest.java`, `code-review.md` |
-| Кочаров Давид | АО | `CartTest.java` (частково), `reproduction-protocol.md` |
+| Белінська Єлизавета | КТ | `DiscountCalculatorTest.java`, `pom.xml`, модуль v1, каркас репо (PR #26, #31), `surefire-summary.md`, `task-board.md` |
+| Матвієнко Владислав | ТА | `PromoCodeValidatorTest.java`, `ui-scenarios.md`, `coverage-matrix.md` |
+| Бобров Павло | ІТ | `CartNormalCasesTest.java`, `PromoCodeValidatorReasonsTest.java`, `LoginTest.java`, `CatalogTest.java`, `CheckoutTest.java`, `UiTestBase.java`, `selenium-ide/shopline.side` + `export/`, стабілізація TC-019 (PR #37, #48) |
+| Бойко Євгеній | СМ | `PromoCodeValidatorRulesTest.java`, `code-review.md` |
+| Кочаров Давид | АО | `CartTest.java` (PR #32), `reproduction-protocol.md` |
 
 ---
 
