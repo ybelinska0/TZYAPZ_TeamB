@@ -14,12 +14,12 @@
 | Показник | Норматив (5 осіб) | Факт |
 |---|---|---|
 | Юніт-тестів JUnit 5 (методів) | ≥ 20 | **38** (91 із параметризацією) |
-| Юніт-тестів на особу | ≥ 3 | Белінська 4, Кочаров 7, Бойко 10, Матвієнко 13, Бобров 4 |
+| Юніт-тестів на особу | ≥ 3 | Белінська 4, Кочаров 7, Бойко 10, Матвієнко 4, Бобров 13 |
 | UI-сценаріїв WebDriver | ≥ 8 | **8** (LoginTest 3, CatalogTest 3, CheckoutTest 2) |
 | Дефектів модуля (звіт + тест) | ≥ 5 | **6** (BUG-015…BUG-020) |
 | Матриця покриття | є | `coverage-matrix.md` — 13 рядків BL-10…BL-80 |
 | UI-сценарії (документ) | є | `ui-scenarios.md` — 8 сценаріїв TC-004…TC-024 |
-| Протокол Surefire | є | `surefire-summary.md` — 2 запуски |
+| Протокол Surefire | є | `surefire-summary.md` — 3 запуски |
 | Протокол відтворення (АО) | є | `reproduction-protocol.md` — 6 звітів |
 | Журнал code review | є | `code-review.md` — 7 класів, 8 зауважень |
 
@@ -98,7 +98,7 @@ qa-shopline/
 |---|---|---|---|---|---|---|
 | Запуск 1 | 12.11.2026 | `mvn clean test` | 91 | 11 | 0 | BUILD FAILURE |
 | Запуск 2 | 12.11.2026 | `mvn test -DexcludedGroups=none` | 99 | 11 | 1 | BUILD FAILURE |
-| Запуск 3 | _після PR#48_ | `mvn test -DexcludedGroups=none` | _очікується_ | _11_ | _0_ | _очікується_ |
+| Запуск 3 | 13.11.2026 | `mvn test -DexcludedGroups=none` | 99 | 11 | 0 | BUILD FAILURE |
 
 **Усі 11 падінь у Запусках 1 і 2 — очікувані:** кожне відповідає звіту про дефект модуля v1 (BUG-015…BUG-020). Помилка `Errors: 1` у Запуску 2 (TC-019) — нестабільність тесту, не дефект продукту, виправлена в PR#48.
 
@@ -110,8 +110,8 @@ qa-shopline/
 |---|---|---|---|---|
 | BUG-015 | #27 | BL-50 | `DiscountCalculatorTest.volumeDiscountPercent_boundaries[4]` | Major |
 | BUG-016 | #28 | BL-50 | `DiscountCalculatorTest.volumeDiscount_roundsHalfUp` | Minor |
-| BUG-017 | #29 | BL-10, BL-20, BL-40 | `CartTest.addItemWithQtyOutOfRangeIsRejected[4]`, `CartTest.changeQtyOutOfRangeIsRejected[3]`, `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | Major |
-| BUG-018 | #30 | BL-20 | `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine`, `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted` | Major |
+| BUG-017 | #29 | BL-10, BL-40 | `CartTest.addItemWithQtyOutOfRangeIsRejected[4]`, `CartTest.changeQtyOutOfRangeIsRejected[3]` | Major |
+| BUG-018 | #30 | BL-20 | `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine`, `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted`, `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | Major |
 | BUG-019 | #50 | BL-70 | `PromoCodeValidatorRulesTest.expiryDateIsInclusive[2]` | Major |
 | BUG-020 | #38 | BL-70, BL-80 | `PromoCodeValidatorRulesTest.singleUseCodeMustNotBeUsed[2]`, `PromoCodeValidatorRulesTest.applyRejectsUsedSingleUseCode`, `PromoCodeValidatorReasonsTest.usedCodeReasonHasPriorityOverInvalidValue` | Major |
 
@@ -121,11 +121,11 @@ qa-shopline/
 
 | Учасник | Роль | Тест-класи / артефакти |
 |---|---|---|
-| Белінська Єлизавета | КТ | `DiscountCalculatorTest.java`, `PromoCodeValidatorRulesTest.java` (частково), координація, `surefire-summary.md`, `task-board.md` |
-| Матвієнко Владислав | ТА | `PromoCodeValidatorTest.java`, `CatalogTest.java`, `LoginTest.java`, `ui-scenarios.md`, `coverage-matrix.md` |
-| Бобров Павло | ІТ | `CartNormalCasesTest.java`, `CheckoutTest.java`, `PromoCodeValidatorReasonsTest.java` (частково), `pom.xml`, інфраструктура |
-| Бойко Євгеній | СМ | `CartTest.java`, `CartNormalCasesTest.java`, `PromoCodeValidatorReasonsTest.java`, `code-review.md` |
-| Кочаров Давид | АО | `CartTest.java` (частково), `reproduction-protocol.md` |
+| Белінська Єлизавета | КТ | `DiscountCalculatorTest.java`, `pom.xml`, модуль v1, каркас репо (PR #26, #31), `surefire-summary.md`, `task-board.md` |
+| Матвієнко Владислав | ТА | `PromoCodeValidatorTest.java`, `ui-scenarios.md`, `coverage-matrix.md` |
+| Бобров Павло | ІТ | `CartNormalCasesTest.java`, `PromoCodeValidatorReasonsTest.java`, `LoginTest.java`, `CatalogTest.java`, `CheckoutTest.java`, `UiTestBase.java`, `selenium-ide/shopline.side` + `export/`, стабілізація TC-019 (PR #37, #48) |
+| Бойко Євгеній | СМ | `PromoCodeValidatorRulesTest.java`, `code-review.md` |
+| Кочаров Давид | АО | `CartTest.java` (PR #32), `reproduction-protocol.md` |
 
 ---
 

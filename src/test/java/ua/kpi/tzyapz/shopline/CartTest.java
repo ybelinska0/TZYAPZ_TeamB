@@ -67,7 +67,7 @@ class CartTest {
         assertCartUnchanged();
     }
 
-    // BUG-017: верхня межа qty 100 замість 99 — при повторному додаванні 2+98=100 > 99 виняток не кидається — падає на v1
+    // BUG-018: повторне додавання замінює рядок замість збільшення qty — 2+98 дає 98 замість винятку (qty > 99) — падає на v1
     @Test
     @DisplayName("BL-20: повторне додавання, що дає 2 + 98 = 100 > 99 → IllegalArgumentException, кошик не змінюється")
     void reAddingSameSkuAboveMaxQtyIsRejected() {
