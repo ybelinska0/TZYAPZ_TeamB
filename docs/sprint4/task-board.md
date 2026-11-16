@@ -2,7 +2,7 @@
 
 **Продукт:** П1 «ШопЛайн» (`shopline`)  
 **Команда:** TZYAPZ_TeamB (5 осіб)  
-**Оновлено:** 14.11.2026; стан `main` — 8bfa769  
+**Оновлено:** 16.11.2026; стан `main` — d97bca9  
 **Автор таблиці:** Бойко Євгеній (Скрам-майстер / рецензент)
 
 ## Ролі спринта 4
@@ -27,7 +27,7 @@
 | Юніт-тестів на особу | ≥ 3 | Белінська 4, Кочаров 7, Бойко 10, Матвієнко 4, Бобров 13 |
 | Матриця покриття | є | `coverage-matrix.md` — 13 рядків BL-10…BL-80, PR #45 |
 | UI-сценарії (документ) | є | `ui-scenarios.md` — 8 сценаріїв TC-004…TC-024, PR #46 |
-| Протокол Surefire | є | `surefire-summary.md` — 2 запуски (91 юніт + 8 UI), PR #47 |
+| Протокол Surefire | є | `surefire-summary.md` — 3 запуски (91 юніт; 99 з UI до і після стабілізації TC-019), PR #47, #54 |
 | Протокол відтворення | є | `reproduction-protocol.md` — 6 кроків, PR #42 |
 | Журнал code review | є | `code-review.md` — 7 класів, 8 зауважень, PR #49 |
 
@@ -45,12 +45,12 @@
 | TTS-50 | `DiscountCalculatorTest` (BL-50, BL-60) | КТ | Белінська Є. | ✅ Done | PR #31 |
 | TTS-51 | `PromoCodeValidatorTest` — валідація формату (BL-70) | ТА | Матвієнко В. | ✅ Done | PR #36 |
 | TTS-52 | `PromoCodeValidatorReasonsTest` + `CartNormalCasesTest` | ІТ | Бобров П. | ✅ Done | PR #37 |
-| TTS-53 | `PromoCodeValidatorRulesTest` (BL-70, BL-80) | СМ | Бойко Є. | ✅ Done | PR #35 |
+| TTS-53 | `PromoCodeValidatorRulesTest` (BL-70, BL-80) | СМ | Бойко Є. | ✅ Done | PR #35; рев'ю не автора — очікується (див. TTS-64) |
 | TTS-54 | `CartTest` — заборонені входи і винятки (BL-10, BL-20, BL-40) | АО | Кочаров Д. | ✅ Done | PR #32 |
 | TTS-55 | Контроль нормативу юніт-тестів (≥3 на особу, ≥20 разом) | КТ | Белінська Є. | ✅ Done | 38 методів, 91 з параметризацією |
 | **3** | **Дефекти модуля** | | | | |
 | TTS-56 | Оформлення звітів BUG-015…020 (GitHub Issues, мітка `module`) | КТ | Белінська Є. | ✅ Done | Issues #27–#30, #38, #50 |
-| TTS-57 | Перевірка звітів за правилами спринта 3 | СМ | Бойко Є. | ✅ Done | `code-review.md` §«Зауваження» |
+| TTS-57 | Перевірка звітів за правилами спринта 3 | СМ | Бойко Є. | 🔄 In Progress | Reviewer заповнено в #27–#30, #38 (14.11); #50 — очікує Reviewer не автора (Кочаров Д.) |
 | **4** | **Selenium і UI-тести** | | | | |
 | TTS-58 | 1–2 сценарії в Selenium IDE | ІТ | Бобров П. | ✅ Done | `selenium-ide/` |
 | TTS-59 | Експорт сценаріїв Selenium IDE у Java JUnit (чернетка) | ІТ | Бобров П. | ✅ Done | `selenium-ide/export/` |
@@ -59,7 +59,7 @@
 | TTS-62 | WebDriver-тести: ≥8 сценаріїв разом | ІТ | Бобров П. | ✅ Done | 8 UI-тестів у PR #37 |
 | TTS-63 | Стабілізація UI-набору (TC-019, `WebDriverWait`) | ІТ | Бобров П. | ✅ Done | PR #48 |
 | **5** | **Code review** | | | | |
-| TTS-64 | Code review кожного тест-класу за чек-листом 5.3 | СМ | Бойко Є. | ✅ Done | `code-review.md`, PR #49 |
+| TTS-64 | Code review кожного тест-класу за чек-листом 5.3 | СМ | Бойко Є. | 🔄 In Progress | `code-review.md`, PR #49; `PromoCodeValidatorRulesTest` — очікує рев'ю не автора (PR #35) |
 | **6** | **Інкремент і демо** | | | | |
 | TTS-65 | README команди: збірка, запуск тестів, автори | КТ | Белінська Є. | ✅ Done | `README.md` |
 | TTS-66 | Протокол запуску Surefire | КТ | Белінська Є. | ✅ Done | `surefire-summary.md`, PR #47 |
