@@ -3,7 +3,7 @@
 **Продукт:** ШопЛайн · **Спринт:** 4 «Автоматизація: JUnit 5 і Selenium WebDriver»
 **Задача:** TTS-67
 **Виконав:** Кочаров Давид (Аудитор-опонент, С4)
-**Дата:** 12.11.2026
+**Дата:** 16.11.2026
 
 ## 1. Середовище
 
@@ -66,7 +66,7 @@
 | `DiscountCalculatorTest.volumeDiscount_roundsHalfUp` | немає | BUG-016 |
 | `CartTest.addItemWithQtyOutOfRangeIsRejected[4]` | BUG-017 | BUG-017 |
 | `CartTest.changeQtyOutOfRangeIsRejected[3]` | BUG-017 | BUG-017 |
-| `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | BUG-018 | BUG-017/018 (розбіжність) |
+| `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | BUG-018 | BUG-017 (розбіжність) |
 | `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine` | BUG-018 | BUG-018 |
 | `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted` | BUG-018 | BUG-018 |
 | `PromoCodeValidatorRulesTest.expiryDateIsInclusive[2]` | BUG-019 | BUG-019 |
@@ -88,16 +88,16 @@
 
 ### 4.4. Звіт про дефект → тест
 
-Перевірено в GitHub Issues (мітка `module`): кожен звіт має посилатися на тест-клас і метод, що його виявив.
+Для кожного звіту знайдено тест-методи, що його виявили: за коментарем `// BUG-NNN` у тест-класі і за таблицею запуску 1 у `docs/sprint4/surefire-summary.md`.
 
-| Звіт | Тест(и), що його виявили | Посилання на тест у звіті |
+| Звіт | Тест(и), що його виявили | Посилання на тест (коментар у коді · рядок у surefire-summary.md) |
 |---|---|---|
-| BUG-015 | `DiscountCalculatorTest.volumeDiscountPercent_boundaries[4]` | |
-| BUG-016 | `DiscountCalculatorTest.volumeDiscount_roundsHalfUp` | |
-| BUG-017 | `CartTest.addItemWithQtyOutOfRangeIsRejected[4]`, `CartTest.changeQtyOutOfRangeIsRejected[3]` | |
-| BUG-018 | `CartTest.reAddingSameSkuAboveMaxQtyIsRejected`, `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine`, `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted` | |
-| BUG-019 | `PromoCodeValidatorRulesTest.expiryDateIsInclusive[2]` | |
-| BUG-020 | `PromoCodeValidatorRulesTest.singleUseCodeMustNotBeUsed[2]`, `PromoCodeValidatorRulesTest.applyRejectsUsedSingleUseCode`, `PromoCodeValidatorReasonsTest.usedCodeReasonHasPriorityOverInvalidValue` | |
+| BUG-015 | `DiscountCalculatorTest.volumeDiscountPercent_boundaries[4]` | `DiscountCalculatorTest#volumeDiscountPercent_boundaries` (DiscountCalculatorTest.java:32) · рядок 18 |
+| BUG-016 | `DiscountCalculatorTest.volumeDiscount_roundsHalfUp` | `DiscountCalculatorTest#volumeDiscount_roundsHalfUp` (DiscountCalculatorTest.java:48) · рядок 19 |
+| BUG-017 | `CartTest.addItemWithQtyOutOfRangeIsRejected[4]`, `CartTest.changeQtyOutOfRangeIsRejected[3]` | `CartTest#addItemWithQtyOutOfRangeIsRejected` (CartTest.java:42) · рядок 20; `CartTest#changeQtyOutOfRangeIsRejected` (CartTest.java:79) · рядок 21 |
+| BUG-018 | `CartTest.reAddingSameSkuAboveMaxQtyIsRejected`, `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine`, `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted` | `CartTest#reAddingSameSkuAboveMaxQtyIsRejected` (CartTest.java:70) · рядок 22 — **розбіжність:** у коді BUG-018, у surefire-summary BUG-017; `CartNormalCasesTest#reAddingSameSkuIncreasesExistingLine` (CartNormalCasesTest.java:67) · рядок 23; `CartNormalCasesTest#reAddingUpToMaxQtyIsAccepted` (CartNormalCasesTest.java:81) · рядок 24 |
+| BUG-019 | `PromoCodeValidatorRulesTest.expiryDateIsInclusive[2]` | `PromoCodeValidatorRulesTest#expiryDateIsInclusive` (PromoCodeValidatorRulesTest.java:60) · рядок 25 |
+| BUG-020 | `PromoCodeValidatorRulesTest.singleUseCodeMustNotBeUsed[2]`, `PromoCodeValidatorRulesTest.applyRejectsUsedSingleUseCode`, `PromoCodeValidatorReasonsTest.usedCodeReasonHasPriorityOverInvalidValue` | `PromoCodeValidatorRulesTest#singleUseCodeMustNotBeUsed` (PromoCodeValidatorRulesTest.java:80) · рядок 26; `PromoCodeValidatorRulesTest#applyRejectsUsedSingleUseCode` (PromoCodeValidatorRulesTest.java:183) · рядок 27; `PromoCodeValidatorReasonsTest#usedCodeReasonHasPriorityOverInvalidValue` (PromoCodeValidatorReasonsTest.java:70) · рядок 28 |
 
 ## 5. Зауваження
 
@@ -106,7 +106,7 @@
 | 1 | `coverage-matrix.md` застаріла: 3 рядки з 38 тестів, хибний BL-ID, довжина 5–10 замість 6–10, неіснуючі назви методів | Високий — обов'язковий артефакт не відповідає коду | Матвієнко В. (ТА) |
 | 2 | TC-019 нестабільний: `findElement(By.id("checkout"))` без очікування (CheckoutTest.java:55), S4-19 не виконано | Середній — норматив UI 8/8 під ризиком на демо | Бобров П. (ІТ) |
 | 3 | `DiscountCalculatorTest`: у червоних тестах немає коментарів BUG-015 і BUG-016 (п. 8 чек-листа review) | Середній | Белінська Є. (автор), Бойко Є. (review пропустив) |
-| 4 | Протокол Surefire: для `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` вказано «BUG-017/018», у коді — BUG-018; один тест — один ID | Низький | Белінська Є. (КТ) |
+| 4 | Протокол Surefire: для `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` вказано «BUG-017», у коді — BUG-018 (тест ловить заміну рядка при повторному додаванні, тобто BUG-018); один тест — один ID | Низький | Белінська Є. (КТ) |
 | 5 | README перелічує дефекти «BUG-015, 016, 018, 020» — пропущено BUG-017 і BUG-019 | Низький | Белінська Є. (КТ) |
 | 6 | README: «38 юніт-тестів» без пояснення, що Surefire показує 91 запуск (параметризація) — читач ззовні бачить розбіжність | Низький | Белінська Є. (КТ) |
 | 7 | README: розділ «Структура» не згадує `docs/sprint4/surefire-summary.md` | Низький | Белінська Є. (КТ) |
