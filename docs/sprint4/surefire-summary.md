@@ -19,7 +19,7 @@
 | `DiscountCalculatorTest.volumeDiscount_roundsHalfUp` | 150.005: expected 150.01 (HALF_UP), was 150.00 | BUG-016 |
 | `CartTest.addItemWithQtyOutOfRangeIsRejected[4]` | qty=100 прийнято, очікувався виняток (межа 99) | BUG-017 |
 | `CartTest.changeQtyOutOfRangeIsRejected[3]` | qty=100 прийнято, очікувався виняток | BUG-017 |
-| `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | сумарна qty > 99 прийнята без винятку | BUG-017 |
+| `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | повторне додавання 2+98 замінює рядок (qty=98), виняток не кидається | BUG-018 |
 | `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine` | 2+3: expected qty 5, was 3 (рядок замінено) | BUG-018 |
 | `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted` | 2+97: expected qty 99, was 97 | BUG-018 |
 | `PromoCodeValidatorRulesTest.expiryDateIsInclusive[2]` | у день закінчення код відхилено (має бути придатний включно) | BUG-019 |
@@ -43,17 +43,17 @@
 ## Запуск 3 — повний набір після стабілізації TC-019 (PR #53)
 
 **Команда:** `mvn test -DexcludedGroups=none`  
-**Дата:** 16.11.2026  
+**Дата:** 13.11.2026  
 **Стан репозиторію:** гілка `main`, коміт `4404ea9`  
-**Середовище:** macOS (Apple Silicon), JDK 17, Maven 3.9, Chrome 157  
-**Виконав:** Бобров Павло (ІТ)
+**Середовище:** Windows 11, JDK 17.0.21, Maven 3.10.0, Chrome 157  
+**Дані надав:** Бобров Павло (ІТ) — підтверджені прогони 13.11.2026 (повний набір двічі) та 16.11.2026 (UI-класи двічі, 8/8)
 
 **Підсумок:** `Tests run: 99, Failures: 11, Errors: 0, Skipped: 0` → BUILD FAILURE
 
 - Юніт-частина: ті самі 11 падінь (дефекти BUG-015…020) — без змін, очікувано.
 - UI (Sauce Demo, headless Chrome): `LoginTest` 3/3 ✅, `CatalogTest` 3/3 ✅, `CheckoutTest` 2/2 ✅ — **TC-019 тепер PASSED**.
 
-TC-019 (`checkoutWithTwoItemsCompletesOrder`) стабілізовано: 4 виклики `findElement` замінено на `WebDriverWait` + `ExpectedConditions.elementToBeClickable` (PR #48). Тестові дані виправлено: `"Pavlo"` / `"Bobrov"` / `"03056"` → `"Test"` / `"User"` / `"12345"` (PR #53). Набір запущено двічі поспіль — результат стабільний.
+TC-019 (`checkoutWithTwoItemsCompletesOrder`) стабілізовано: 6 місць `findElement` замінено на `WebDriverWait` + `ExpectedConditions.elementToBeClickable` у `CheckoutTest`, `LoginTest`, `UiTestBase` (PR #48). Тестові дані виправлено: `"Pavlo"` / `"Bobrov"` / `"03056"` → `"Test"` / `"User"` / `"12345"` (PR #53). Набір запущено двічі поспіль — результат стабільний.
 
 ## Висновок
 
