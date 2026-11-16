@@ -55,9 +55,9 @@ class CheckoutTest extends UiTestBase {
         openCart();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("checkout"))).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("first-name"))).sendKeys("Pavlo");
-        driver.findElement(By.id("last-name")).sendKeys("Bobrov");
-        driver.findElement(By.id("postal-code")).sendKeys("03056");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("first-name"))).sendKeys("Test");
+        driver.findElement(By.id("last-name")).sendKeys("User");
+        driver.findElement(By.id("postal-code")).sendKeys("12345");
         driver.findElement(By.id("continue")).click();
 
         wait.until(ExpectedConditions.urlContains("/checkout-step-two.html"));
