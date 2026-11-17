@@ -45,7 +45,7 @@ class DiscountCalculatorTest {
         assertEquals(expectedPercent, actual);
     }
 
-    // BUG-016: volumeDiscount округлює вниз (FLOOR) замість HALF_UP; 150.005 повертає 150.00 замість 150.01
+    // BUG-016: volumeDiscount округлює вниз (RoundingMode.DOWN) замість HALF_UP; 150.005 повертає 150.00 замість 150.01
     @Test
     @DisplayName("BL-50: сума знижки округлюється HALF_UP до копійок")
     void volumeDiscount_roundsHalfUp() {
@@ -54,6 +54,20 @@ class DiscountCalculatorTest {
         BigDecimal expected = new BigDecimal("150.01");
 
         assertEquals(expected, discounts.volumeDiscount(subtotal));
+    }
+
+    // Нормальні випадки BL-50 без округлення (зауваження №3 code review):
+    // 1999.99 → 0 % → 0.00; 2000.00 × 5 % = 100.00; 10000.00 × 15 % = 1500.00
+    @ParameterizedTest(name = "subtotal={0} → знижка {1}")
+    @DisplayName("BL-50: сума знижки для нормальних випадків (volumeDiscount)")
+    @CsvSource({
+        "1999.99, 0.00",
+        "2000.00, 100.00",
+        "10000.00, 1500.00"
+    })
+    void volumeDiscount_normalCases(String subtotal, String expectedDiscount) {
+        BigDecimal actual = discounts.volumeDiscount(new BigDecimal(subtotal));
+        assertEquals(new BigDecimal(expectedDiscount), actual);
     }
 
     // ---------- BL-60: вартість доставки ----------
@@ -74,7 +88,7 @@ class DiscountCalculatorTest {
     // ---------- Заборонені входи ----------
 
     @Test
-    @DisplayName("BL-50/60: від'ємна сума — IllegalArgumentException")
+    @DisplayName("BL-50: від'ємна сума — volumeDiscountPercent кидає IllegalArgumentException")
     void negativeSubtotal_throwsException() {
         BigDecimal negative = new BigDecimal("-0.01");
 
