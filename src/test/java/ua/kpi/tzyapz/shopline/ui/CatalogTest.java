@@ -44,15 +44,18 @@ class CatalogTest extends UiTestBase {
     void sortByPriceLowToHighOrdersAscending() {
         loginAsStandardUser();
 
-        new Select(wait.until(ExpectedConditions.elementToBeClickable(By.className("product_sort_container"))))
+        By sortBox = By.className("product_sort_container");
+        new Select(wait.until(ExpectedConditions.elementToBeClickable(sortBox)))
                 .selectByVisibleText("Price (low to high)");
 
-        List<BigDecimal> prices = wait.until(d -> {
-            List<BigDecimal> found = d.findElements(PRICE).stream().map(e -> money(e.getText())).toList();
-            return found.size() == 6 && found.get(0).compareTo(found.get(5)) < 0 ? found : null;
-        });
+        // Чекаємо на стан, який перевіряємо: обрано сортування «lohi» і на сторінці 6 цін.
+        // Порядок цін перевіряє лише assert — при хибному сортуванні тест впаде з повідомленням, а не за тайм-аутом.
+        wait.until(ExpectedConditions.attributeToBe(sortBox, "value", "lohi"));
+        List<BigDecimal> prices = wait.until(ExpectedConditions.numberOfElementsToBe(PRICE, 6)).stream()
+                .map(e -> money(e.getText()))
+                .toList();
         List<BigDecimal> sorted = prices.stream().sorted().toList();
-        assertIterableEquals(sorted, prices);
+        assertIterableEquals(sorted, prices, "ціни після сортування «Price (low to high)»");
     }
 
     @Test
