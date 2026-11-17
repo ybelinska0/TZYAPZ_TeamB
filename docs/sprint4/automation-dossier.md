@@ -5,132 +5,221 @@
 **Репозиторій:** https://github.com/ybelinska0/TZYAPZ_TeamB  
 **Трекер:** https://shopline1teamb.atlassian.net/jira/software/projects/TTS  
 **Склав:** Белінська Єлизавета (КТ)  
-**Дата:** 14.11.2026
+**Дата:** 17.11.2026
 
 ---
 
 ## 1. Нормативні показники (план / факт)
 
-| Показник | Норматив (5 осіб) | Факт |
-|---|---|---|
-| Юніт-тестів JUnit 5 (методів) | ≥ 20 | **38** (91 із параметризацією) |
-| Юніт-тестів на особу | ≥ 3 | Белінська 4, Кочаров 7, Бойко 10, Матвієнко 4, Бобров 13 |
-| UI-сценаріїв WebDriver | ≥ 8 | **8** (LoginTest 3, CatalogTest 3, CheckoutTest 2) |
-| Дефектів модуля (звіт + тест) | ≥ 5 | **6** (BUG-015…BUG-020) |
-| Матриця покриття | є | `coverage-matrix.md` — 13 рядків BL-10…BL-80 |
-| UI-сценарії (документ) | є | `ui-scenarios.md` — 8 сценаріїв TC-004…TC-024 |
-| Протокол Surefire | є | `surefire-summary.md` — 3 запуски |
-| Протокол відтворення (АО) | є | `reproduction-protocol.md` — 6 звітів |
-| Журнал code review | є | `code-review.md` — 7 класів, 8 зауважень |
+| Показник | Норматив | Факт |
+|---|---:|---:|
+| Унікальні юніт-тест-методи JUnit 5 | ≥ 20 | **41** |
+| Юніт-тест-методів на учасника | ≥ 3 | **4–13 на учасника** |
+| Виконання юніт-тестів у Run 4 | — | **96** |
+| UI-сценаріїв WebDriver | ≥ 8 | **8** |
+| Виконання всіх тестів у Run 5 | — | **104** |
+| Дефектів модуля з відповідними тестами | ≥ 5 | **6** (BUG-015…BUG-020) |
+| Матриця покриття | є | `coverage-matrix.md` |
+| Документ UI-сценаріїв | є | `ui-scenarios.md` |
+| Протокол Surefire | є | `surefire-summary.md` — 5 запусків, з них 3 історичні та 2 фінальні |
+| Протокол відтворення дефектів | є | `reproduction-protocol.md` |
+| Журнал code review | є | `code-review.md` |
+
+**Примітка щодо кількості тестів:** 41 — це кількість унікальних юніт-тест-методів у шести основних тест-класах. Surefire показує 96 виконань у Run 4 через параметризовані тести та 2 додаткові виконання `ExampleTest` зі стартового проєкту. Під час повного запуску Run 5 додаються 8 UI-тестів, тому загальна кількість становить 104.
 
 ---
 
-## 2. Структура репозиторію автотестів
+## 2. Структура автоматизованих тестів
 
-```
-qa-shopline/
-├── README.md                        # збірка, запуск, структура, автори
-├── pom.xml                          # JDK 17, JUnit 5.10, Selenium 4.21, Surefire
-├── docs/sprint4/
-│   ├── coverage-matrix.md           # BL-вимога → правило → тести → рецензент
-│   ├── ui-scenarios.md              # TC-xx → кроки, локатори, очікування, тест-метод
-│   ├── surefire-summary.md          # протокол запуску: дата, команда, результати
-│   ├── reproduction-protocol.md     # 6 звітів про дефекти з кроками відтворення
-│   ├── code-review.md               # рев'ю 7 тест-класів, 8 зауважень
-│   ├── task-board.md                # розподіл 26 задач по ролях
-│   └── automation-dossier.md        # цей документ
+```text
+TZYAPZ_TeamB/
+├── README.md
+├── pom.xml
+├── docs/
+│   └── sprint4/
+│       ├── coverage-matrix.md
+│       ├── ui-scenarios.md
+│       ├── surefire-summary.md
+│       ├── reproduction-protocol.md
+│       ├── code-review.md
+│       ├── task-board.md
+│       └── automation-dossier.md
 ├── selenium-ide/
-│   └── shopline.side                # проєкт Selenium IDE
-└── src/test/java/ua/kpi/tzyapz/shopline/
-    ├── CartTest.java                # 13 методів — BL-10, BL-20, BL-40
-    ├── CartNormalCasesTest.java     # 8 методів — BL-10, BL-20, BL-40
-    ├── DiscountCalculatorTest.java  # 7 методів — BL-50, BL-60
-    ├── PromoCodeValidatorTest.java  # 13 методів — BL-70 (формат, пріоритет)
-    ├── PromoCodeValidatorRulesTest.java  # 11 методів — BL-70 (правила), BL-80
-    ├── PromoCodeValidatorReasonsTest.java # 5 методів — BL-70 (пріоритет), BL-80
-    └── ui/
-        ├── LoginTest.java           # 3 сценарії — TC-004, TC-005, TC-006
-        ├── CatalogTest.java         # 3 сценарії — TC-007, TC-008, TC-009
-        └── CheckoutTest.java        # 2 сценарії — TC-018, TC-019
+│   └── shopline.side
+└── src/
+    └── test/
+        └── java/ua/kpi/tzyapz/shopline/
+            ├── CartTest.java
+            ├── CartNormalCasesTest.java
+            ├── DiscountCalculatorTest.java
+            ├── PromoCodeValidatorTest.java
+            ├── PromoCodeValidatorRulesTest.java
+            ├── PromoCodeValidatorReasonsTest.java
+            └── ui/
+                ├── LoginTest.java
+                ├── CatalogTest.java
+                ├── CheckoutTest.java
+                └── UiTestBase.java
 ```
 
----
-
-## 3. Охоплення BL-вимог юніт-тестами
-
-| BL-вимога | Перевіряє правило | Тест-клас | Методів |
-|---|---|---|---|
-| BL-10 | Межі qty (1..99), ціна > 0, SKU непорожній | CartNormalCasesTest, CartTest | 7 |
-| BL-20 | Повторне додавання збільшує qty; ≤ 99 | CartNormalCasesTest, CartTest | 3 |
-| BL-40 | changeQty межі (1..99), removeItem, subtotal | CartNormalCasesTest, CartTest | 8 |
-| BL-50 | volumeDiscountPercent тарифи 0/5/10/15 %, округлення HALF_UP | DiscountCalculatorTest | 4 |
-| BL-60 | shippingFee: 0.00 при ≥ 1500 грн, 120.00 інакше | DiscountCalculatorTest | 3 |
-| BL-70 | Формат (6–10 симв., A–Z, 0–9), термін, одноразовість, пріоритет причин | PromoCodeValidatorTest, PromoCodeValidatorRulesTest, PromoCodeValidatorReasonsTest | 29 |
-| BL-80 | apply(): розрахунок знижки HALF_UP; виняток для непридатного коду | PromoCodeValidatorRulesTest, PromoCodeValidatorReasonsTest | 6 |
-
-**Усього:** 38 унікальних тест-методів (91 виконання з параметризацією).
+**Основні інструменти:** JDK 17, Maven, JUnit 5, Selenium WebDriver, Maven Surefire, Chrome та Selenium Manager.
 
 ---
 
-## 4. Перелік UI-сценаріїв (WebDriver)
+## 3. Кількість юніт-тест-методів за класами
 
-| Тест-метод | TC-ID | Опис | Статус |
+У шести основних тест-класах реалізовано 41 унікальний юніт-тест-метод.
+
+| Тест-клас | Кількість методів | Що перевіряється |
+|---|---:|---|
+| `CartTest` | 7 | Заборонені значення, межі кількості, винятки кошика |
+| `CartNormalCasesTest` | 8 | Допустимі значення, нормальні сценарії кошика, повторне додавання товарів |
+| `DiscountCalculatorTest` | 7 | Тарифи знижок, округлення, вартість доставки |
+| `PromoCodeValidatorTest` | 4 | Формат промокоду, довжина та допустимі символи |
+| `PromoCodeValidatorRulesTest` | 10 | Термін дії, одноразовість, межі значення, застосування знижки |
+| `PromoCodeValidatorReasonsTest` | 5 | Причини відмови, їх пріоритет, застосування промокоду |
+| **Разом** | **41** | |
+
+### Покриття бізнес-логіки
+
+| BL-вимога | Тест-класи | Основні перевірки |
+|---|---|---|
+| BL-10 | `CartTest`, `CartNormalCasesTest` | Межі кількості товару, допустимі та недопустимі значення |
+| BL-20 | `CartTest`, `CartNormalCasesTest` | Повторне додавання товару, збільшення кількості в наявному рядку |
+| BL-40 | `CartTest`, `CartNormalCasesTest` | Зміна кількості, видалення товару, підсумок кошика |
+| BL-50 | `DiscountCalculatorTest` | Межі тарифів знижки та округлення `HALF_UP` |
+| BL-60 | `DiscountCalculatorTest` | Розрахунок вартості доставки |
+| BL-70 | `PromoCodeValidatorTest`, `PromoCodeValidatorRulesTest`, `PromoCodeValidatorReasonsTest` | Формат, термін дії, одноразовість, допустимі значення |
+| BL-80 | `PromoCodeValidatorRulesTest`, `PromoCodeValidatorReasonsTest` | Застосування промокоду та перевірка його придатності |
+
+Параметризовані тести перевіряють декілька наборів вхідних даних одним методом. Кожен набір даних виконується Surefire окремо, тому кількість виконань більша за кількість унікальних методів.
+
+---
+
+## 4. Перелік UI-сценаріїв (Selenium WebDriver)
+
+UI-набір складається з 8 тест-методів у трьох класах: `LoginTest`, `CatalogTest` і `CheckoutTest`.
+
+| Тест-метод | TC-ID | Призначення | Результат фінального запуску |
 |---|---|---|---|
-| `LoginTest.validCredentialsLogin()` | TC-004 | Успішний вхід покупця | ✅ PASSED |
-| `LoginTest.invalidPasswordShowsError()` | TC-005 | Помилковий пароль — повідомлення про помилку | ✅ PASSED |
-| `LoginTest.emptyFieldsShowError()` | TC-006 | Порожні поля при вході | ✅ PASSED |
-| `CatalogTest.catalogPageLoads()` | TC-007 | Завантаження сторінки каталогу | ✅ PASSED |
-| `CatalogTest.searchByKeyword()` | TC-008 | Пошук за ключовим словом | ✅ PASSED |
-| `CatalogTest.addToCartFromCatalog()` | TC-009 | Додавання товару до кошика з каталогу | ✅ PASSED |
-| `CheckoutTest.checkoutWithOneItemCompletesOrder()` | TC-018 | Оформлення замовлення з одним товаром | ✅ PASSED |
-| `CheckoutTest.checkoutWithTwoItemsCompletesOrder()` | TC-019 | Оформлення замовлення з двома товарами | ✅ PASSED (після PR#48) |
+| `LoginTest.validLoginOpensInventory()` | TC-004 | Успішний вхід і відкриття каталогу | PASSED |
+| `LoginTest.invalidPasswordShowsError()` | TC-005 | Відхилення входу з неправильним паролем | PASSED |
+| `LoginTest.inventoryIsNotAccessibleAfterLogout()` | TC-024 | Перевірка недоступності каталогу після виходу | PASSED |
+| `CatalogTest.catalogShowsCompleteProductCards()` | TC-007 | Перевірка карток товарів у каталозі | PASSED |
+| `CatalogTest.sortByPriceLowToHighOrdersAscending()` | TC-012 | Сортування товарів за зростанням ціни | PASSED |
+| `CatalogTest.productPageShowsDetails()` | TC-013 | Перевірка сторінки товару | PASSED |
+| `CheckoutTest.cartShowsItemAndRemovingItEmptiesCart()` | TC-018 | Перевірка кошика та видалення товару | PASSED |
+| `CheckoutTest.checkoutWithTwoItemsCompletesOrder()` | TC-019 | Оформлення замовлення з двома товарами | PASSED |
 
-> **TC-019** — до PR#48 падав з `NoSuchElementException` через відсутність явних очікувань.  
-> Стабілізовано: `findElement` → `WebDriverWait` + `ExpectedConditions.elementToBeClickable`.
+### Результати UI-набору
+
+| Клас | Успішно | Всього |
+|---|---:|---:|
+| `LoginTest` | 3 | 3 |
+| `CatalogTest` | 3 | 3 |
+| `CheckoutTest` | 2 | 2 |
+| **Разом** | **8** | **8** |
+
+У Run 5 всі 8 UI-тестів пройшли успішно двічі поспіль.
+
+**Стабілізація TC-019:** у PR #48 виправлено очікування елементів Selenium із використанням `WebDriverWait` та `ExpectedConditions`. Тестові дані для оформлення замовлення виправлено в PR #53: використовуються `Test`, `User`, `12345`.
+
+**Примітка щодо тестового середовища:** UI-сценарії виконуються на резервному demo-застосунку Sauce Demo замість основного Toolshop. Погодження цієї заміни з викладачем наразі не підтверджено. Відмінності між початковими кейсами та резервним demo описані в `ui-scenarios.md`.
 
 ---
 
 ## 5. Підсумок запусків Surefire
 
-Детальний протокол: [`surefire-summary.md`](surefire-summary.md)
+Детальний протокол: `surefire-summary.md`.
 
-| Запуск | Дата | Команда | Tests run | Failures | Errors | Стан |
-|---|---|---|---|---|---|---|
-| Запуск 1 | 12.11.2026 | `mvn clean test` | 91 | 11 | 0 | BUILD FAILURE |
-| Запуск 2 | 12.11.2026 | `mvn test -DexcludedGroups=none` | 99 | 11 | 1 | BUILD FAILURE |
-| Запуск 3 | 13.11.2026 | `mvn test -DexcludedGroups=none` | 99 | 11 | 0 | BUILD FAILURE |
+### Фінальні запуски
 
-**Усі 11 падінь у Запусках 1 і 2 — очікувані:** кожне відповідає звіту про дефект модуля v1 (BUG-015…BUG-020). Помилка `Errors: 1` у Запуску 2 (TC-019) — нестабільність тесту, не дефект продукту, виправлена в PR#48.
+| Запуск | Дата | Команда | Tests run | Failures | Errors | Skipped |
+|---|---|---|---:|---:|---:|---:|
+| Run 4 — Белінська | 17.11.2026, 22:03:53 (UTC+02:00) | `mvn clean test` | 96 | 11 | 0 | 0 |
+| Run 5 — Бобров, запуск 1 | 17.11.2026, 21:45 | `mvn clean test -DexcludedGroups=none` | 104 | 11 | 0 | 0 |
+| Run 5 — Бобров, запуск 2 | 17.11.2026, 21:45 | `mvn clean test -DexcludedGroups=none` | 104 | 11 | 0 | 0 |
+
+**Run 4:** виконано чистий запуск юніт-тестів. Отримано 96 виконань, 11 падінь і 0 помилок виконання.
+
+**Run 5:** виконано повний набір, включно з UI-тестами. Обидва повторні запуски дали однаковий результат: 104 виконання, 11 падінь і 0 помилок виконання. Усі 8 UI-тестів пройшли успішно.
+
+### Історичні запуски
+
+| Запуск | Дата | Команда | Tests run | Failures | Errors | Skipped |
+|---|---|---|---:|---:|---:|---:|
+| Run 1 | 12.11.2026 | `mvn clean test` | 91 | 11 | 0 | 0 |
+| Run 2 | 12.11.2026 | `mvn test -DexcludedGroups=none` | 99 | 11 | 1 | 0 |
+| Run 3 | 13.11.2026 | `mvn test -DexcludedGroups=none` | 99 | 11 | 0 | 0 |
+
+У Run 2 виникла помилка UI-тесту TC-019 через нестабільне очікування елемента `#checkout`. Її було усунуто в PR #48. У PR #53 виправлено тестові дані оформлення замовлення. Після цього Run 3 і фінальний Run 5 підтвердили успішне виконання UI-набору.
 
 ---
 
 ## 6. Дефекти модуля v1
 
+У процесі тестування виявлено шість дефектів бізнес-логіки. Кожен дефект має відповідний GitHub Issue та пов'язаний із тестами, які відтворюють проблему.
+
 | ID | GitHub Issue | BL-вимога | Тест, що виявляє | Severity |
 |---|---|---|---|---|
-| BUG-015 | #27 | BL-50 | `DiscountCalculatorTest.volumeDiscountPercent_boundaries[4]` | Major |
+| BUG-015 | #27 | BL-50 | `DiscountCalculatorTest.volumeDiscountPercent_boundaries` | Major |
 | BUG-016 | #28 | BL-50 | `DiscountCalculatorTest.volumeDiscount_roundsHalfUp` | Minor |
-| BUG-017 | #29 | BL-10, BL-40 | `CartTest.addItemWithQtyOutOfRangeIsRejected[4]`, `CartTest.changeQtyOutOfRangeIsRejected[3]` | Major |
-| BUG-018 | #30 | BL-20 | `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine`, `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted`, `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | Major |
-| BUG-019 | #50 | BL-70 | `PromoCodeValidatorRulesTest.expiryDateIsInclusive[2]` | Major |
-| BUG-020 | #38 | BL-70, BL-80 | `PromoCodeValidatorRulesTest.singleUseCodeMustNotBeUsed[2]`, `PromoCodeValidatorRulesTest.applyRejectsUsedSingleUseCode`, `PromoCodeValidatorReasonsTest.usedCodeReasonHasPriorityOverInvalidValue` | Major |
+| BUG-017 | #29 | BL-10, BL-40 | `CartTest.addItemWithQtyOutOfRangeIsRejected`, `CartTest.changeQtyOutOfRangeIsRejected` | Normal |
+| BUG-018 | #30 | BL-20 | `CartTest.reAddingSameSkuAboveMaxQtyIsRejected`, `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine`, `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted` | Major |
+| BUG-019 | #50 | BL-70 | `PromoCodeValidatorRulesTest.expiryDateIsInclusive` | Normal |
+| BUG-020 | #38 | BL-70, BL-80 | `PromoCodeValidatorRulesTest.singleUseCodeMustNotBeUsed`, `PromoCodeValidatorRulesTest.applyRejectsUsedSingleUseCode`, `PromoCodeValidatorReasonsTest.usedCodeReasonHasPriorityOverInvalidValue` | Major |
+
+### Прив'язка дефектів до класів
+
+- **Cart:** BUG-017 — прийняття кількості 100 замість обмеження 1–99; BUG-018 — неправильна поведінка під час повторного додавання товару з тим самим SKU.
+- **DiscountCalculator:** BUG-015 — неправильний тариф знижки на межі 5000 грн; BUG-016 — неправильне округлення суми знижки.
+- **PromoCodeValidator:** BUG-019 — відхилення промокоду в день завершення його дії; BUG-020 — прийняття вже використаного одноразового промокоду та неправильна обробка відповідної причини відмови.
+
+**Примітка щодо BUG-020:** перевірка пріоритету причини «Код уже використано» над недопустимим значенням знижки спирається на запропоноване уточнення BL-70/BL-80, яке ще очікує підтвердження замовника. Основні перевірки одноразовості промокоду та відхилення його застосування залишаються актуальними незалежно від цього уточнення.
 
 ---
 
-## 7. Внесок учасників (за історією комітів)
+## 7. Внесок учасників
 
-| Учасник | Роль | Тест-класи / артефакти |
-|---|---|---|
-| Белінська Єлизавета | КТ | `DiscountCalculatorTest.java`, `pom.xml`, модуль v1, каркас репо (PR #26, #31), `surefire-summary.md`, `task-board.md` |
-| Матвієнко Владислав | ТА | `PromoCodeValidatorTest.java`, `ui-scenarios.md`, `coverage-matrix.md` |
-| Бобров Павло | ІТ | `CartNormalCasesTest.java`, `PromoCodeValidatorReasonsTest.java`, `LoginTest.java`, `CatalogTest.java`, `CheckoutTest.java`, `UiTestBase.java`, `selenium-ide/shopline.side` + `export/`, стабілізація TC-019 (PR #37, #48) |
-| Бойко Євгеній | СМ | `PromoCodeValidatorRulesTest.java`, `code-review.md` |
-| Кочаров Давид | АО | `CartTest.java` (PR #32), `reproduction-protocol.md` |
+Розподіл тест-методів за авторами відповідно до `README.md` та історії роботи над тестами.
+
+| Учасник | Роль | Тест-класи / артефакти | Кількість юніт-методів |
+|---|---|---|---:|
+| Белінська Єлизавета | КТ | `DiscountCalculatorTest` — тарифи, нормальні випадки, округлення та доставка | 5 |
+| Кочаров Давид | АО | `CartTest` — заборонені входи та винятки кошика | 7 |
+| Бойко Євгеній | СМ | Частина `DiscountCalculatorTest`, `PromoCodeValidatorRulesTest`, code review | 12 |
+| Матвієнко Владислав | ТА | `PromoCodeValidatorTest` — формат промокоду | 4 |
+| Бобров Павло | ІТ | `CartNormalCasesTest`, `PromoCodeValidatorReasonsTest`, UI-тести та `UiTestBase` | 13 |
+| **Разом** | | | **41** |
+
+Окремо реалізовано 8 UI-тестів WebDriver.
 
 ---
 
-## 8. Висновок про стан модуля v1
+## 8. Висновок про стан автоматизації
 
-Модуль `shopline` v1 містить **6 дефектів** у класах `Cart`, `DiscountCalculator` та `PromoCodeValidator`, виявлених юніт-тестуванням. Усі дефекти задокументовані в GitHub Issues з мітками `bug` і `module`, мають прив'язку до BL-вимог специфікації і відтворюються запуском відповідних тест-методів.
+У межах спринта 4 підготовлено автоматизований набір для перевірки бізнес-логіки модуля `shopline` та основних UI-сценаріїв.
 
-Автоматизований набір (38 методів JUnit 5 + 8 WebDriver-сценаріїв) готовий до регресійного запуску на модулі v2 у Спринті 5. Після виправлення дефектів очікується зелений `BUILD SUCCESS`.
+**Юніт-тестування:**
+
+- 41 унікальний тест-метод у шести основних тест-класах;
+- 96 виконань у фінальному Run 4;
+- 11 невдалих виконань, усі пов'язані з раніше зареєстрованими дефектами;
+- 0 помилок виконання.
+
+**UI-тестування:**
+
+- 8 сценаріїв WebDriver у трьох тест-класах;
+- 8 із 8 тестів успішно виконано в Run 5;
+- результат повторився у двох послідовних повних запусках;
+- TC-019 стабілізовано в PR #48, тестові дані виправлено в PR #53.
+
+**Виявлені дефекти:**
+
+- `Cart` — BUG-017 і BUG-018;
+- `DiscountCalculator` — BUG-015 і BUG-016;
+- `PromoCodeValidator` — BUG-019 і BUG-020.
+
+Усі 11 невдалих тестів мають відповідні зареєстровані дефекти. Нових падінь та помилок виконання під час фінальних запусків не виявлено.
+
+Отже, набір автоматизованих тестів підготовлений для регресійної перевірки виправлень модуля v1 у наступному спринті. Після усунення зареєстрованих дефектів очікується успішне проходження всіх юніт- та UI-тестів.

@@ -1,60 +1,151 @@
 # Протокол запуску автотестів (Surefire) — Спринт 4
 
-**Дата:** 12.11.2026, 08:51–08:53
-**Стан репозиторію:** гілка `main`, коміт `9afaec7`
-**Середовище:** macOS (Apple Silicon), JDK 17, Maven 3.9, Chrome 157
-**Виконала:** Белінська Єлизавета (КТ)
+**Дата фінальних запусків:** 17.11.2026  
+**Гілка:** `main`  
+**Коміт фінальних запусків:** `bb0df4f` (Merge PR #61; потребує локальної перевірки SHA)  
+**Виконала Run 4:** Белінська Єлизавета (КТ)  
+**Виконав Run 5:** Бобров Павло (ІТ)
 
-## Запуск 1 — юніт-тести
+> Run 4 виконано на macOS. У переданому фрагменті Maven-виводу не зафіксовано окремі версії JDK і Maven CLI. Видно, що проєкт компілюється з `release 17`, а використана версія Maven Surefire — 3.2.5.
 
-**Команда:** `mvn clean test`
+---
 
-**Підсумок:** `Tests run: 91, Failures: 11, Errors: 0, Skipped: 0` → BUILD FAILURE
+## Фінальний запуск 4 — чистий запуск юніт-тестів
 
-Усі 11 падінь — очікувані: кожне відповідає звіту про дефект модуля v1 (GitHub Issues, мітка `module`). Очікувані значення в тестах взято з тексту BL-вимог специфікації, тому «червоний» тест = знайдений дефект, а не помилка тесту.
+**Дата й час:** 17.11.2026, 22:03:53 (UTC+02:00)  
+**Команда:**
 
-| Тест (failed) | Розбіжність | Дефект |
-|---|---|---|
-| `DiscountCalculatorTest.volumeDiscountPercent_boundaries[4]` | subtotal 5000.00: expected 10 %, was 5 % | BUG-015 |
-| `DiscountCalculatorTest.volumeDiscount_roundsHalfUp` | 150.005: expected 150.01 (HALF_UP), was 150.00 | BUG-016 |
-| `CartTest.addItemWithQtyOutOfRangeIsRejected[4]` | qty=100 прийнято, очікувався виняток (межа 99) | BUG-017 |
-| `CartTest.changeQtyOutOfRangeIsRejected[3]` | qty=100 прийнято, очікувався виняток | BUG-017 |
-| `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | повторне додавання 2+98 замінює рядок (qty=98), виняток не кидається | BUG-018 |
-| `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine` | 2+3: expected qty 5, was 3 (рядок замінено) | BUG-018 |
-| `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted` | 2+97: expected qty 99, was 97 | BUG-018 |
-| `PromoCodeValidatorRulesTest.expiryDateIsInclusive[2]` | у день закінчення код відхилено (має бути придатний включно) | BUG-019 |
-| `PromoCodeValidatorRulesTest.singleUseCodeMustNotBeUsed[2]` | використаний одноразовий код визнано придатним | BUG-020 |
-| `PromoCodeValidatorRulesTest.applyRejectsUsedSingleUseCode` | apply не кинув виняток для використаного коду | BUG-020 |
-| `PromoCodeValidatorReasonsTest.usedCodeReasonHasPriorityOverInvalidValue` | причина «використано» ігнорується, повернено причину про значення | BUG-020 |
+```bash
+mvn clean test
+```
 
-Решта 80 тестів — зелені, зокрема `PromoCodeValidatorTest` (13/13) і `ExampleTest` (2/2).
+**Коміт:** `bb0df4f` (потребує перевірки через `git rev-parse --short HEAD`)  
+**Середовище:** macOS; цільова версія компіляції Java 17 (`release 17`); Maven Surefire 3.2.5. Фактичну версію встановленої JDK не зафіксовано.  
+**Виконала:** Белінська Єлизавета (КТ).
 
-## Запуск 2 — повний набір з UI
+**Підсумок:**
 
-**Команда:** `mvn test -DexcludedGroups=none`
+```text
+Tests run: 96, Failures: 11, Errors: 0, Skipped: 0
+BUILD FAILURE
+```
 
-**Підсумок:** `Tests run: 99, Failures: 11, Errors: 1, Skipped: 0` → BUILD FAILURE
+Отримано 85 успішних виконань і 11 невдалих. `BUILD FAILURE` є очікуваним результатом для поточної версії модуля v1: усі 11 падінь відповідають раніше зареєстрованим дефектам BUG-015…BUG-020.
 
-- Юніт-частина: ті самі 11 падінь, що в запуску 1 (дефекти BUG-015…020).
-- UI (Sauce Demo, headless Chrome): `LoginTest` 3/3 ✅, `CatalogTest` 3/3 ✅, `CheckoutTest` 1/2 — TC-018 ✅, **TC-019 — Error** (`NoSuchElementException: #checkout`).
+### Розподіл результатів за тест-класами
 
-Помилка TC-019 — **не дефект продукту, а нестабільність тесту**: елемент `#checkout` шукається прямим `findElement` без явного очікування (CheckoutTest.java:55). Передано Інженеру з тестування на стабілізацію (задача S4-19): замінити на `WebDriverWait` + `ExpectedConditions`. `WARNING: Unable to find CDP implementation matching 157` — некритичне попередження про версію DevTools-протоколу, на результат тестів не впливає.
+| Тест-клас | Tests run | Failures | Errors | Skipped |
+|---|---:|---:|---:|---:|
+| `ExampleTest` | 2 | 0 | 0 | 0 |
+| `DiscountCalculatorTest` | 16 | 2 | 0 | 0 |
+| `PromoCodeValidatorRulesTest` | 21 | 3 | 0 | 0 |
+| `CartNormalCasesTest` | 14 | 2 | 0 | 0 |
+| `PromoCodeValidatorReasonsTest` | 10 | 1 | 0 | 0 |
+| `PromoCodeValidatorTest` | 13 | 0 | 0 | 0 |
+| `CartTest` | 20 | 3 | 0 | 0 |
+| **Разом** | **96** | **11** | **0** | **0** |
 
-## Запуск 3 — повний набір після стабілізації TC-019 (PR #53)
+### Перелік невдалих тестів і відповідних дефектів
 
-**Команда:** `mvn test -DexcludedGroups=none`  
-**Дата:** 13.11.2026  
-**Стан репозиторію:** гілка `main`, коміт `4404ea9`  
-**Середовище:** Windows 11, JDK 17.0.21, Maven 3.10.0, Chrome 157  
-**Дані надав:** Бобров Павло (ІТ) — підтверджені прогони 13.11.2026 (повний набір двічі) та 16.11.2026 (UI-класи двічі, 8/8)
+| № | Тест, що не пройшов | Фактична розбіжність | Дефект |
+|---:|---|---|---|
+| 1 | `DiscountCalculatorTest.volumeDiscountPercent_boundaries[4]` | Очікувалося 10 %, отримано 5 % на межі 5000 грн | BUG-015 (#27) |
+| 2 | `DiscountCalculatorTest.volumeDiscount_roundsHalfUp` | Очікувалося 150.01, отримано 150.00 | BUG-016 (#28) |
+| 3 | `CartTest.addItemWithQtyOutOfRangeIsRejected[4]` | Для `qty = 100` не було кинуто `IllegalArgumentException` | BUG-017 (#29) |
+| 4 | `CartTest.changeQtyOutOfRangeIsRejected[3]` | Для `qty = 100` не було кинуто `IllegalArgumentException` | BUG-017 (#29) |
+| 5 | `CartTest.reAddingSameSkuAboveMaxQtyIsRejected` | Для повторного додавання кількості понад 99 не було кинуто виняток | BUG-018 (#30) |
+| 6 | `CartNormalCasesTest.reAddingSameSkuIncreasesExistingLine` | Очікувалася кількість 5, отримано 3 | BUG-018 (#30) |
+| 7 | `CartNormalCasesTest.reAddingUpToMaxQtyIsAccepted` | Очікувалася кількість 99, отримано 97 | BUG-018 (#30) |
+| 8 | `PromoCodeValidatorRulesTest.expiryDateIsInclusive[2]` | Промокод відхилено в день завершення дії, хоча цей день має бути включений | BUG-019 (#50) |
+| 9 | `PromoCodeValidatorRulesTest.singleUseCodeMustNotBeUsed[2]` | Використаний одноразовий промокод визнано придатним | BUG-020 (#38) |
+| 10 | `PromoCodeValidatorRulesTest.applyRejectsUsedSingleUseCode` | Для використаного одноразового промокоду не було кинуто `IllegalArgumentException` | BUG-020 (#38) |
+| 11 | `PromoCodeValidatorReasonsTest.usedCodeReasonHasPriorityOverInvalidValue` | Не враховано використання одноразового коду та пріоритет відповідної причини відмови | BUG-020 (#38) |
 
-**Підсумок:** `Tests run: 99, Failures: 11, Errors: 0, Skipped: 0` → BUILD FAILURE
+### Висновок за запуском 4
 
-- Юніт-частина: ті самі 11 падінь (дефекти BUG-015…020) — без змін, очікувано.
-- UI (Sauce Demo, headless Chrome): `LoginTest` 3/3 ✅, `CatalogTest` 3/3 ✅, `CheckoutTest` 2/2 ✅ — **TC-019 тепер PASSED**.
+Чистий запуск `mvn clean test` підтвердив відтворюваність 11 раніше зареєстрованих дефектів. Помилок виконання (`Errors`) не зафіксовано. UI-тести в цьому запуску не виконувалися, оскільки стандартна конфігурація Surefire виключає групу `ui`.
 
-TC-019 (`checkoutWithTwoItemsCompletesOrder`) стабілізовано: 6 місць `findElement` замінено на `WebDriverWait` + `ExpectedConditions.elementToBeClickable` у `CheckoutTest`, `LoginTest`, `UiTestBase` (PR #48). Тестові дані виправлено: `"Pavlo"` / `"Bobrov"` / `"03056"` → `"Test"` / `"User"` / `"12345"` (PR #53). Набір запущено двічі поспіль — результат стабільний.
+---
 
-## Висновок
+## Фінальний запуск 5 — повний набір тестів із UI
 
-Проєкт збирається і запускається однією командою. Юніт-набір покриває всі 3 класи модуля (норматив: 38 тестів, ≥3 на кожного учасника). Усі 11 червоних тестів простежуються до звітів про дефекти BUG-015…BUG-020. UI-набір після стабілізації TC-019 — **8/8**, `Errors: 0`.
+**Дата й час:** 17.11.2026, 21:45  
+**Коміт:** `bb0df4f`  
+**Середовище:** Windows 11 Home 10.0.26300; JDK Temurin 17.0.21; Maven 3.10.0; Chrome 157.0.8103.79.  
+**Дані надав:** Бобров Павло (ІТ).
+
+**Команда:**
+
+```bash
+mvn clean test -DexcludedGroups=none
+```
+
+Команду виконано двічі поспіль на одному коміті.
+
+**Результат обох запусків:**
+
+```text
+Tests run: 104, Failures: 11, Errors: 0, Skipped: 0
+BUILD FAILURE
+```
+
+Обидва запуски дали однаковий результат: 93 успішні виконання, 11 невдалих, 0 помилок виконання та 0 пропущених тестів.
+
+### Результати UI-тестів
+
+| Тест-клас | Успішно | Всього | Результат |
+|---|---:|---:|---|
+| `LoginTest` | 3 | 3 | PASSED |
+| `CatalogTest` | 3 | 3 | PASSED |
+| `CheckoutTest` | 2 | 2 | PASSED |
+| **Разом** | **8** | **8** | **PASSED** |
+
+Усі 8 UI-тестів пройшли успішно в обох запусках. Зокрема, TC-019 (`checkoutWithTwoItemsCompletesOrder`) виконався без помилки.
+
+### Результати юніт-тестів
+
+Юніт-частина зберегла ті самі 11 падінь, що й у Run 4. Нових падінь та помилок виконання не виявлено. Усі 11 невдалих тестів відповідають дефектам BUG-015…BUG-020, наведеним у таблиці вище.
+
+### Стабілізація UI-тестів
+
+Проблему з нестабільним виконанням TC-019 було усунуто в межах PR #48: прямі пошуки елементів замінено на явні очікування Selenium (`WebDriverWait` та `ExpectedConditions`).
+
+Тестові дані для оформлення замовлення було виправлено в PR #53: замість персональних значень використовуються тестові дані `Test`, `User`, `12345`.
+
+Повторні повні запуски підтвердили стабільність UI-набору в межах цих перевірок: усі 8 UI-тестів пройшли двічі поспіль.
+
+> Для Run 5 використано наданий Бобровим підсумок консольного виводу. Це зведення результатів, а не повний необроблений Maven-лог.
+
+---
+
+## Історія попередніх запусків
+
+Попередні запуски 1–3 залишено в історії для збереження послідовності перевірок. Вони не є фінальними контрольними запусками.
+
+| Запуск | Дата | Команда | Коміт | Tests run | Failures | Errors | Skipped |
+|---|---|---|---|---:|---:|---:|---:|
+| 1 | 12.11.2026 | `mvn clean test` | `9afaec7` | 91 | 11 | 0 | 0 |
+| 2 | 12.11.2026 | `mvn test -DexcludedGroups=none` | не зафіксовано | 99 | 11 | 1 | 0 |
+| 3 | 13.11.2026 | `mvn test -DexcludedGroups=none` | `4404ea9` | 99 | 11 | 0 | 0 |
+
+### Примітки до історичних запусків
+
+- **Run 1:** 11 падінь відповідали відомим дефектам модуля v1.
+- **Run 2:** додатково виникла помилка UI-тесту TC-019 (`NoSuchElementException` під час пошуку елемента `#checkout`). Це була нестабільність тесту, а не новий дефект бізнес-логіки.
+- **Run 3:** після стабілізації UI-тесту TC-019 помилка `Errors: 1` зникла. Усі 8 UI-тестів пройшли успішно.
+- **PR #48:** стабілізація Selenium-очікувань для UI-тестів.
+- **PR #53:** виправлення тестових даних для оформлення замовлення.
+
+---
+
+## Загальний висновок
+
+Фінальні запуски 4 і 5 підтвердили повторюваність результатів автоматизованого набору тестів:
+
+- У Run 4 виконано 96 тестів: 11 невдалих, 0 помилок виконання.
+- У Run 5 виконано 104 тести: 11 невдалих, 0 помилок виконання. Результат повторився двічі.
+- Усі 8 UI-тестів пройшли успішно в обох повних запусках.
+- Усі 11 невдалих тестів пов'язані з шістьма зареєстрованими дефектами BUG-015…BUG-020.
+- Нових дефектів або помилок виконання під час фінальних запусків не виявлено.
+
+Отже, набір автотестів готовий до регресійного використання для перевірки виправлень модуля v1 у наступному спринті.
