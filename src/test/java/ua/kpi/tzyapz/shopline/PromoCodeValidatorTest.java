@@ -21,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * та PromoCodeValidatorReasonsTest.
  *
  * Очікувані значення взято з тексту BL-70 (docs/sprint2/SRS-1.1.md), а не з реалізації.
+ * Правило «лише A–Z і 0–9» і порядок причин відмови — «пропоноване уточнення» BL-70 у SRS 1.1,
+ * яке ще чекає підтвердження замовника; після відповіді змінюються дані тестів, а не їхня логіка.
  */
 @Tag("unit")
 @DisplayName("PromoCodeValidator · BL-70 (формат коду)")
@@ -100,3 +102,4 @@ class PromoCodeValidatorTest {
                         "причина та сама, що й для коду лише з невірним форматом"));
     }
 }
+
