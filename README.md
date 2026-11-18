@@ -39,7 +39,7 @@ mvn test -DexcludedGroups=none -Dheadless=false -Dtest=LoginTest
 - Юніт-тест-методів **41**. Surefire показує **96** запусків, бо кожен рядок параметризованого тесту (`@CsvSource`, `@ValueSource`) — окремий запуск, а ще 2 запуски дає `ExampleTest` зі стартового проєкту.
 - **11 червоних тестів — очікувані:** це тести, що виявили закладені дефекти модуля v1. Кожен має в коментарі ID звіту: **BUG-015, BUG-016, BUG-017, BUG-018, BUG-019, BUG-020**. Див. [Issues з міткою `module`](../../issues?q=is%3Aissue+label%3Amodule).
 
-UI-тести виконуються на **резервному** demo-застосунку [Sauce Demo](https://www.saucedemo.com/) (`standard_user` / `secret_sauce`). Основний demo продукту — Toolshop (practicesoftwaretesting.com, док. 06). Для автоматизації UI-сценаріїв використано резервний demo-застосунок Sauce Demo замість основного Toolshop. Погодження цієї заміни з викладачем наразі не підтверджене. Як кейси спринта 3 перенесено на резервний demo — див. `docs/sprint4/ui-scenarios.md`, колонка «Адаптація».
+UI-тести виконуються на офіційному demo-застосунку курсу [Sauce Demo](https://www.saucedemo.com/) (`standard_user` / `secret_sauce`). **Дозвіл викладача на використання Sauce Demo як UI-резерву отримано** — ризик щодо нормативу ≥ 8 UI-тестів знято.
 
 ## Посилання
 
