@@ -29,7 +29,7 @@
 | UI-сценарії (документ) | є | `ui-scenarios.md` — 8 сценаріїв TC-004…TC-024 з адаптацією для резервного demo, PR #46, #61, #62, #64 |
 | Протокол Surefire | є | `surefire-summary.md` — 5 запусків; фінальні: 96 юніт / 104 з UI, 11 failed, 0 errors, PR #47, #54, #65 |
 | Протокол відтворення | є | `reproduction-protocol.md` + повторне відтворення на фінальному коміті, PR #42, #52, #63 |
-| Журнал code review | є | `code-review.md` — 7 класів, 9 зауважень (усі закриті), PR #49, PR #{PR} |
+| Журнал code review | є | `code-review.md` — 7 класів, 9 зауважень (усі закриті), PR #49, PR #66 |
 
 ## Задачі
 
@@ -59,7 +59,7 @@
 | TTS-62 | WebDriver-тести: ≥8 сценаріїв разом | ІТ | Бобров П. | ✅ Done | 8 UI-тестів у PR #37 |
 | TTS-63 | Стабілізація UI-набору (TC-019, `WebDriverWait`; TC-012 — очікування на стан) | ІТ | Бобров П. | ✅ Done | PR #48, #53, #60; запуск 5 — 8/8 двічі |
 | **5** | **Code review** | | | | |
-| TTS-64 | Code review кожного тест-класу за чек-листом 5.3 | СМ | Бойко Є. | ✅ Done | `code-review.md`, PR #49, PR #{PR}; `PromoCodeValidatorRulesTest` — review Кочарова Д. (PR #35, 17.11) |
+| TTS-64 | Code review кожного тест-класу за чек-листом 5.3 | СМ | Бойко Є. | ✅ Done | `code-review.md`, PR #49, PR #66; `PromoCodeValidatorRulesTest` — review Кочарова Д. (PR #35, 17.11) |
 | **6** | **Інкремент і демо** | | | | |
 | TTS-65 | README команди: збірка, запуск тестів, автори | КТ | Белінська Є. | ✅ Done | `README.md` |
 | TTS-66 | Протокол запуску Surefire | КТ | Белінська Є. | ✅ Done | `surefire-summary.md`, PR #47, #54, #65 (запуски 4–5) |
