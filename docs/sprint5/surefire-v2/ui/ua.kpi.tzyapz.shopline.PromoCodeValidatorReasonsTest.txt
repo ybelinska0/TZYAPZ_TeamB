@@ -1,0 +1,51 @@
+-------------------------------------------------------------------------------
+Test set: ua.kpi.tzyapz.shopline.PromoCodeValidatorReasonsTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.015 s <<< FAILURE! -- in ua.kpi.tzyapz.shopline.PromoCodeValidatorReasonsTest
+ua.kpi.tzyapz.shopline.PromoCodeValidatorReasonsTest.usedCodeReasonHasPriorityOverInvalidValue -- Time elapsed: 0 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Пріоритет «Код уже використано» (2 failures)
+	org.opentest4j.AssertionFailedError: використаний одноразовий код має причину відмови ==> expected: <false> but was: <true>
+	org.opentest4j.AssertionFailedError: причина при двох порушеннях ==> expected: <> but was: <Відсоток знижки має бути в межах 1..50>
+	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:80)
+	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)
+	at org.junit.jupiter.api.Assertions.assertAll(Assertions.java:2961)
+	at ua.kpi.tzyapz.shopline.PromoCodeValidatorReasonsTest.usedCodeReasonHasPriorityOverInvalidValue(PromoCodeValidatorReasonsTest.java:78)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: використаний одноразовий код має причину відмови ==> expected: <false> but was: <true>
+		at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+		at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+		at org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
+		at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
+		at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:239)
+		at ua.kpi.tzyapz.shopline.PromoCodeValidatorReasonsTest.lambda$usedCodeReasonHasPriorityOverInvalidValue$2(PromoCodeValidatorReasonsTest.java:79)
+		at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+		... 6 more
+	Suppressed: org.opentest4j.AssertionFailedError: причина при двох порушеннях ==> expected: <> but was: <Відсоток знижки має бути в межах 1..50>
+		at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+		at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+		at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+		at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+		at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+		at ua.kpi.tzyapz.shopline.PromoCodeValidatorReasonsTest.lambda$usedCodeReasonHasPriorityOverInvalidValue$3(PromoCodeValidatorReasonsTest.java:80)
+		at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+		... 6 more
+
