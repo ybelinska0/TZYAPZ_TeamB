@@ -1,7 +1,7 @@
 # Звіт про якість продукту — розділи 4–5 (чернетка)
 
 **Задача:** S5-19 (TTS-96) · **Автор:** Бобров Павло (СМ) · **Рецензент:** Кочаров Давид (КТ)  
-**Стан:** чернетка від 22.11.2026. Дані спринтів 3–4 заповнено; місця `<…v2…>` заповнюються після регресії — з `regression-log.xlsx` (S5-07, S5-08, S5-10) і статусів дефектів (S5-11, S5-12). Для зшивання в `quality-report.docx` (S5-22).
+**Стан:** чернетка від 24.11.2026. Дані спринтів 3–4 заповнено; місця `<…v2…>` заповнюються після регресії — з `regression-log.xlsx` (S5-07, S5-08, S5-10) і статусів дефектів (S5-11, S5-12). Для зшивання в `quality-report.docx` (S5-22).
 
 ---
 
@@ -17,6 +17,8 @@
 | Позитивні / негативні | 20 / 11 |
 | З них на граничні значення | 8 |
 | Прорецензовано (статус `reviewed`) | 31 з 31 |
+
+У спринті 5 до регресійного набору додано **TC-032** (P-10 — час завантаження першої сторінки каталогу, вимірювання через DevTools → Network; автор — Белінська Є.), тож у регресії **32 ручні кейси** ([`regression-plan.md`](regression-plan.md), розділ 8). Таблиці 4.1–4.4 описують 31 кейс спринта 3.
 
 Техніки: класи еквівалентності й граничні значення (межі кількості 0 / 1 / 99 / 100, довжина пароля 7 / 8, довжина повідомлення 49 / 50), сценарні перевірки ключових процесів (реєстрація, вхід, пошук, кошик, оформлення замовлення, звернення).
 
@@ -35,7 +37,7 @@
 | D — документація | 2 | 0 | 0 |
 | **Разом** | **41** | **31 (75,6 %)** | — |
 
-Ручні кейси свідомо не покривають BL-50, BL-70, BL-80 (модуль не інтегровано в інтерфейс — покрито юніт-тестами спринта 4, розділ 6), нефункціональні P-10, P-20, U-10 і документаційні D-10, D-20, а також GUI-80, GUI-100 (пороги — пропозиція, що чекає підтвердження замовника). Причини — аркуш `Coverage` у `test-cases.xlsx`; підсумкове покриття разом з автотестами — матриця простежуваності, розділ 8.
+Ручні кейси свідомо не покривають BL-50, BL-70, BL-80 (модуль не інтегровано в інтерфейс — покрито юніт-тестами спринта 4, розділ 6), нефункціональні P-10 (у спринті 5 — TC-032), P-20, U-10 і документаційні D-10, D-20, а також GUI-80, GUI-100 (пороги — пропозиція, що чекає підтвердження замовника). Причини — аркуш `Coverage` у `test-cases.xlsx`; підсумкове покриття разом з автотестами — матриця простежуваності, розділ 8.
 
 ### 4.3. Приклад кейса
 
@@ -66,7 +68,7 @@
 
 ### 4.5. Ручні кейси на v2 (регресія, спринт 5)
 
-`<Заповнити з regression-log.xlsx після S5-07 і S5-08: дата прогону, виконавці (блок A — TC-001…016, блок B — TC-017…031), passed / failed / blocked, переходи v1 → v2 (стабільно / виправлено / не виправлено / регресія), кейси, що змінили результат.>`
+`<Заповнити з regression-log.xlsx після S5-07 і S5-08: дата прогону, виконавці (блок A — TC-001…016, Матвієнко В.; блок B — TC-017…032, Кочаров Д.), passed / failed / blocked, переходи v1 → v2 (стабільно / виправлено / не виправлено / регресія), кейси, що змінили результат.>`
 
 ---
 
@@ -76,7 +78,7 @@
 
 Трекер — [GitHub Issues](https://github.com/ybelinska0/TZYAPZ_TeamB/issues): 14 дефектів demo-застосунку (спринт 3, мітка `sprint:3`) і 6 дефектів модуля бізнес-логіки v1 (спринт 4, мітка `module`). Звіти — за шаблоном спринта 3 (ID, заголовок, severity, priority, опис, кроки, фактичний / очікуваний результат, середовище, вкладення, рецензент).
 
-Колонка «Вимога» — найконкретніша вимога (одна на дефект) за прив'язкою S5-14 `<звірити з traceability-matrix.xlsx після S5-14>`.
+Колонка «Вимога» — найконкретніша вимога (одна на дефект) за прив'язкою S5-14 (Белінська Є., `traceability-matrix.xlsx`, аркуш «Дефекти»). Дефект, видимий в інтерфейсі demo, прив'язано до вимоги інтерфейсу або функції, а не до API модуля.
 
 | ID | Issue | Джерело | Вимога | Severity | Priority | Статус до регресії | Статус після регресії (v2) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -85,13 +87,13 @@
 | BUG-003 | [#13](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/13) | demo, TC-015 | GUI-30 | Normal | P3 | New | `<…>` |
 | BUG-004 | [#14](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/14) | demo, TC-025 | U-30 | Minor | P3 | New | `<…>` |
 | BUG-005 | [#15](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/15) | demo, TC-022 | F-140 | Normal | P3 | New | `<…>` |
-| BUG-006 | [#16](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/16) | demo, TC-031 | BL-20 | Major | P3 | New | `<…>` |
+| BUG-006 | [#16](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/16) | demo, TC-031 | F-100 | Major | P3 | New | `<…>` |
 | BUG-007 | [#17](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/17) | demo, TC-004 | GUI-10 | Trivial | P3 | New | `<…>` |
 | BUG-008 | [#18](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/18) | demo, TC-002 | U-20 | Minor | P3 | New | `<…>` |
 | BUG-009 | [#19](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/19) | demo, TC-026 | F-10 | Normal | P3 | New | `<…>` |
 | BUG-010 | [#20](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/20) | demo, TC-006 | F-30 | Normal | P3 | New | `<…>` |
 | BUG-011 | [#21](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/21) | demo, TC-019 | F-110 | Major | P3 | New | `<…>` |
-| BUG-012 | [#22](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/22) | demo, TC-019 | BL-60 | Normal | P3 | New | `<…>` |
+| BUG-012 | [#22](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/22) | demo, TC-019 | F-110 | Normal | P3 | New | `<…>` |
 | BUG-013 | [#23](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/23) | demo, TC-021 | F-130 | Minor | P3 | New | `<…>` |
 | BUG-014 | [#24](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/24) | demo, TC-026 | GUI-50 | Minor | P3 | New | `<…>` |
 | BUG-015 | [#27](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/27) | модуль v1, `DiscountCalculatorTest` | BL-50 | Major | P2 | New → Fixed (передано v2) | `<…>` |
@@ -100,7 +102,7 @@
 | BUG-018 | [#30](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/30) | модуль v1, `CartTest`, `CartNormalCasesTest` | BL-20 | Major | P2 | New → Fixed (передано v2) | `<…>` |
 | BUG-019 | [#50](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/50) | модуль v1, `PromoCodeValidatorRulesTest` | BL-70 | Normal | P3 | New → Fixed (передано v2) | `<…>` |
 | BUG-020 | [#38](https://github.com/ybelinska0/TZYAPZ_TeamB/issues/38) | модуль v1, `PromoCodeValidatorRulesTest`, `PromoCodeValidatorReasonsTest` | BL-70 | Major | P2 | New → Fixed (передано v2) | `<…>` |
-| `<BUG-021…>` | `<…>` | регресія v2 (S5-13) | `<…>` | `<…>` | `<…>` | — | New |
+| BUG-021 | `<Issue — S5-13>` | регресія v2: модуль v2, `DiscountCalculatorTest.shippingFee_boundaries[2]` (на v1 — passed) | BL-60 | `<S5-13>` | `<S5-13>` | — | New |
 
 Статуси після регресії: модуль — `Verified → Closed` або `Reopened` з фактичним результатом на v2 (S5-11, затвердження КТ — S5-12); demo — `Open` («підтверджено на v2, дата») або `Closed (not reproducible)` з причиною. Новий регресійний дефект — окремий звіт `defects-regression.md` із «регресія v2» в заголовку (S5-13).
 
@@ -117,6 +119,8 @@
 | **Разом** | **14** | **6** | **20** |
 
 За priority: P1 — 0, P2 — 3 (BUG-015, 018, 020), P3 — 17. Дефектів, що блокують виконання кейсів (P1), і дефектів Blocker / Critical не зареєстровано.
+
+За розділами SRS (одна вимога на дефект, разом із регресійним BUG-021): **F — 8, GUI — 4, BL — 7, нефункціональні (U) — 2; разом 21** — збігається з аркушем «Підсумок» матриці простежуваності.
 
 Розподіл **відкритих** дефектів після регресії (для критерію К1 і розділу 8): `<після S5-11, S5-12>`.
 
