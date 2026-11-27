@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ua.kpi.tzyapz.shopline.ui.LoginTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.143 s -- in ua.kpi.tzyapz.shopline.ui.LoginTest
